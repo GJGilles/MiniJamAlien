@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://bnuoq47r4b8ue"]
+
+[ext_resource type="Script" uid="uid://bbepqc66pp85j" path="res://scenes/game_scene/room/room_scene.gd" id="1_2nqp8"]
+[ext_resource type="Texture2D" uid="uid://dt8mgttahg2u2" path="res://assets/room/none.png" id="1_opyto"]
+[ext_resource type="PackedScene" uid="uid://c2hsf3qakqox7" path="res://scenes/game_scene/alien/alien_scene.tscn" id="2_2nqp8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_opyto"]
+radius = 260.0
+
+[node name="RoomScene" type="Area2D"]
+script = ExtResource("1_2nqp8")
+
+[node name="Background" type="Sprite2D" parent="."]
+texture = ExtResource("1_opyto")
+
+[node name="AlienScene" parent="." instance=ExtResource("2_2nqp8")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_opyto")

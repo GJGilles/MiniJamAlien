@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://wf7kp2sossa1"]
+
+[ext_resource type="Script" uid="uid://dq54cmufbobl8" path="res://scenes/game_scene/food/food_scene.gd" id="1_qp6m4"]
+[ext_resource type="Texture2D" uid="uid://3yg0c8rqcvho" path="res://assets/food/green.png" id="1_w0dna"]
+
+[node name="FoodScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qp6m4")
+food = 1
+
+[node name="TextureButton" type="Button" parent="."]
+layout_mode = 0
+offset_right = 233.0
+offset_bottom = 191.0
+
+[node name="TextureRect" type="TextureRect" parent="TextureButton"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_w0dna")
+
+[connection signal="button_down" from="TextureButton" to="." method="_button_down"]
