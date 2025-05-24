@@ -103,4 +103,4 @@ func do_activity_want(activity: GAME.ACTIVITY_TYPE):
 	if curr_activity_want == activity:
 		happiness += get_activity_wants()[curr_activity_want]
 		curr_activity_want = GAME.ACTIVITY_TYPE.NONE
-		curr_activity_want = 0
+		time_activity_want = 0

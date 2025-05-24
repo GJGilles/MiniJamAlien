@@ -7,7 +7,12 @@ const SPORE_SCENE: PackedScene = preload("res://scenes/game_scene/spore/spore_sc
 @onready var alien_scene: AlienScene = $AlienScene
 @onready var spores: Node2D = $Spores
 
+@export var alien: AlienData
+
 const SPORE_LIMIT: int = 5
+
+func _ready() -> void:
+	alien_scene.data = alien
 
 func deposit(carry: MOUSE.CarryData):
 	if carry is MOUSE.CarryFoodData and alien_scene.data != null:

@@ -1,32 +1,107 @@
-[gd_scene load_steps=4 format=3 uid="uid://dov0rwj03vh4o"]
+[gd_scene load_steps=17 format=3 uid="uid://dov0rwj03vh4o"]
 
 [ext_resource type="PackedScene" uid="uid://bnuoq47r4b8ue" path="res://scenes/game_scene/room/room_scene.tscn" id="1_pwder"]
 [ext_resource type="PackedScene" uid="uid://wf7kp2sossa1" path="res://scenes/game_scene/food/food_scene.tscn" id="2_72663"]
+[ext_resource type="Script" uid="uid://cfnnk8spvdvsq" path="res://data/alien/alien_red_data.gd" id="2_ducuf"]
+[ext_resource type="Script" uid="uid://7ve1obn7ab5d" path="res://data/alien/alien_blue_data.gd" id="3_dgii4"]
 [ext_resource type="PackedScene" uid="uid://cbrxpudjvhjs" path="res://scenes/game_scene/tool/tool_scene.tscn" id="3_o81xq"]
+[ext_resource type="Script" uid="uid://bdxmkri1uxhyt" path="res://data/alien/alien_green_data.gd" id="4_hqmgi"]
+[ext_resource type="PackedScene" uid="uid://brwv2x0e5ovtx" path="res://scenes/game_scene/shop/shop_scene.tscn" id="4_xb203"]
+[ext_resource type="Script" uid="uid://ds6ykmtm66mdp" path="res://data/alien/alien_purple_data.gd" id="5_3di6p"]
+[ext_resource type="Script" uid="uid://mpl1ibwo6tc2" path="res://data/alien/alien_orange_data.gd" id="6_jytbd"]
+[ext_resource type="Script" uid="uid://c3aebtfg8qqsr" path="res://data/alien/alien_yellow_data.gd" id="7_iprv4"]
+
+[sub_resource type="Resource" id="Resource_j8flk"]
+script = ExtResource("2_ducuf")
+metadata/_custom_type_script = ExtResource("2_ducuf")
+
+[sub_resource type="Resource" id="Resource_1ypwy"]
+script = ExtResource("3_dgii4")
+metadata/_custom_type_script = ExtResource("3_dgii4")
+
+[sub_resource type="Resource" id="Resource_hunbn"]
+script = ExtResource("4_hqmgi")
+metadata/_custom_type_script = ExtResource("4_hqmgi")
+
+[sub_resource type="Resource" id="Resource_7aaem"]
+script = ExtResource("5_3di6p")
+metadata/_custom_type_script = ExtResource("5_3di6p")
+
+[sub_resource type="Resource" id="Resource_bwcss"]
+script = ExtResource("6_jytbd")
+metadata/_custom_type_script = ExtResource("6_jytbd")
+
+[sub_resource type="Resource" id="Resource_hn7ev"]
+script = ExtResource("7_iprv4")
+metadata/_custom_type_script = ExtResource("7_iprv4")
 
 [node name="GameScene" type="Node2D"]
 
-[node name="RoomScene" parent="." instance=ExtResource("1_pwder")]
-position = Vector2(288, 252)
-
-[node name="FoodScene" parent="." instance=ExtResource("2_72663")]
-offset_left = 704.0
-offset_top = 336.0
-offset_right = 704.0
-offset_bottom = 336.0
-
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.25, 0.25)
+zoom = Vector2(0.3, 0.3)
+
+[node name="Rooms" type="Node2D" parent="."]
+
+[node name="RoomScene1" parent="Rooms" instance=ExtResource("1_pwder")]
+alien = SubResource("Resource_j8flk")
+
+[node name="RoomScene2" parent="Rooms" instance=ExtResource("1_pwder")]
+position = Vector2(-560, 0)
+alien = SubResource("Resource_1ypwy")
+
+[node name="RoomScene3" parent="Rooms" instance=ExtResource("1_pwder")]
+position = Vector2(-280, -480)
+alien = SubResource("Resource_hunbn")
+
+[node name="RoomScene4" parent="Rooms" instance=ExtResource("1_pwder")]
+position = Vector2(-280, 480)
+alien = SubResource("Resource_7aaem")
+
+[node name="RoomScene5" parent="Rooms" instance=ExtResource("1_pwder")]
+position = Vector2(280, -480)
+alien = SubResource("Resource_bwcss")
+
+[node name="RoomScene6" parent="Rooms" instance=ExtResource("1_pwder")]
+position = Vector2(280, 480)
+
+[node name="RoomScene7" parent="Rooms" instance=ExtResource("1_pwder")]
+position = Vector2(560, 0)
+alien = SubResource("Resource_hn7ev")
+
+[node name="FoodBlue" parent="." instance=ExtResource("2_72663")]
+offset_left = -689.0
+offset_top = 704.0
+offset_right = -689.0
+offset_bottom = 704.0
+food = 2
+
+[node name="FoodGreen" parent="." instance=ExtResource("2_72663")]
+offset_left = -119.0
+offset_top = 690.0
+offset_right = -119.0
+offset_bottom = 690.0
+
+[node name="FoodPurple" parent="." instance=ExtResource("2_72663")]
+offset_left = 506.0
+offset_top = 695.0
+offset_right = 506.0
+offset_bottom = 695.0
+food = 3
 
 [node name="CarryTool" parent="." instance=ExtResource("3_o81xq")]
-offset_left = -1810.0
-offset_top = 891.0
-offset_right = -1810.0
-offset_bottom = 891.0
+visible = false
+offset_left = -1530.0
+offset_top = 767.0
+offset_right = -1530.0
+offset_bottom = 767.0
 
 [node name="SuckTool" parent="." instance=ExtResource("3_o81xq")]
-offset_left = -1499.0
-offset_top = 895.0
-offset_right = -1499.0
-offset_bottom = 895.0
+visible = false
+offset_left = -1219.0
+offset_top = 766.0
+offset_right = -1219.0
+offset_bottom = 766.0
 mode = 1
+
+[node name="ShopScene" parent="." instance=ExtResource("4_xb203")]
+visible = false

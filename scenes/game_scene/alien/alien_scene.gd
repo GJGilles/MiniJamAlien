@@ -3,25 +3,26 @@ extends Node2D
 class_name AlienScene
 
 @onready var sprite_2d: Sprite2D = $Sprite2D
-@onready var progress_bar: ProgressBar = $Sprite2D/ProgressBar
+@onready var progress_bar: ProgressBar = $ProgressBar
 
-@onready var thought: TextureRect = $Sprite2D/Thought
-@onready var want: TextureRect = $Sprite2D/Thought/Want
+@onready var thought: TextureRect = $Thought
+@onready var want: TextureRect = $Thought/Want
 
-@export var data: AlienData:
+var data: AlienData:
 	get: 
 		return data
 	set(value):
-		if data != null:
-			sprite_2d.visible = false
-			data.on_update.disconnect(on_update)
-			
-		data = value
 		if !is_ready:
 			await ready
 		
+		visible = false
 		if data != null:
-			sprite_2d.visible = true
+			data.on_update.disconnect(on_update)
+			
+		data = value
+		
+		if data != null:
+			visible = true
 			data.on_update.connect(on_update)
 			sprite_2d.texture = data.get_sprite()
 

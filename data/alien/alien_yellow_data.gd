@@ -1,19 +1,19 @@
 extends AlienData
 
-class_name AlienRedData
+class_name AlienYellowData
 
 func get_sprite() -> Texture2D:
-	return load("res://assets/alien/red.png")
+	return load("res://assets/alien/yellow.png")
 
 func get_spore_sprite() -> Texture2D:
-	return load("res://assets/spore/red.png")
+	return load("res://assets/spore/yellow.png")
 
 func get_spore_cost() -> int:
 	return 1
 
 func get_food_wants() -> Dictionary[GAME.FOOD_TYPE, int]:
 	return {
-		GAME.FOOD_TYPE.GREEN: 5
+		GAME.FOOD_TYPE.PURPLE: 5
 	}
 
 func get_activity_wants() -> Dictionary[GAME.ACTIVITY_TYPE, int]:
@@ -22,7 +22,7 @@ func get_activity_wants() -> Dictionary[GAME.ACTIVITY_TYPE, int]:
 	}
 
 func get_food_cooldown() -> float:
-	return 35.0
+	return 33.0
 
 func get_activity_cooldown() -> float:
 	return 8.0

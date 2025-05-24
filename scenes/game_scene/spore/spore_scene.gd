@@ -9,15 +9,13 @@ const INTERVAL: float = 2.0
 
 var interval_time: float = 0
 
-var sprite: Texture2D = null
 var cost: int = 1
 
 func _ready() -> void:
-	sprite_2d.texture = sprite
 	position = Vector2.ZERO
 
 func set_values(s: Texture2D, c: int):
-	sprite = s
+	sprite_2d.texture = s
 	cost = c
 
 func _physics_process(delta: float) -> void:

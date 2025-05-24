@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dnc7glma7brsa"
-path="res://.godot/imported/alien-bug.png-bb9123ed51f32d84d0ccaa58dd319dc0.ctex"
+uid="uid://ds8ddralnynut"
+path="res://.godot/imported/yellow.png-6e7424c11be55860dc11cde6258d6735.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/alien/alien-bug.png"
-dest_files=["res://.godot/imported/alien-bug.png-bb9123ed51f32d84d0ccaa58dd319dc0.ctex"]
+source_file="res://assets/alien/yellow.png"
+dest_files=["res://.godot/imported/yellow.png-6e7424c11be55860dc11cde6258d6735.ctex"]
 
 [params]
 

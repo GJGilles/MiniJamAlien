@@ -1,0 +1,42 @@
+[gd_scene load_steps=2 format=3 uid="uid://brwv2x0e5ovtx"]
+
+[ext_resource type="PackedScene" uid="uid://7a7kpmnv4514" path="res://scenes/game_scene/shop/item/shop_item_scene.tscn" id="1_roqrc"]
+
+[node name="ShopScene" type="CanvasLayer"]
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 2
+horizontal_scroll_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="ShopItemScene" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_roqrc")]
+layout_mode = 2
+
+[node name="ShopItemScene2" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_roqrc")]
+layout_mode = 2
+
+[node name="ShopItemScene3" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_roqrc")]
+layout_mode = 2
+
+[node name="ShopItemScene4" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_roqrc")]
+layout_mode = 2
+
+[node name="ShopItemScene5" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_roqrc")]
+layout_mode = 2
+
+[node name="ShopItemScene6" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_roqrc")]
+layout_mode = 2
+
+[node name="ShopItemScene7" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_roqrc")]
+layout_mode = 2
+
+[node name="ShopItemScene8" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_roqrc")]
+layout_mode = 2
