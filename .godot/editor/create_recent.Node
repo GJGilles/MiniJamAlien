@@ -1,0 +1,15 @@
+AnimationPlayer
+Node2D
+Label
+TextureRect
+Panel
+VBoxContainer
+ScrollContainer
+CanvasLayer
+Button
+DonutCollisionPolygon2D
+CollisionShape2D
+StaticBody2D
+RigidBody2D
+Camera2D
+Sprite2D
