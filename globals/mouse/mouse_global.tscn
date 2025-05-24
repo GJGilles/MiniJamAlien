@@ -1,15 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://bu0xnmt6a3weo"]
+[gd_scene load_steps=4 format=3 uid="uid://bu0xnmt6a3weo"]
 
 [ext_resource type="Script" uid="uid://cj5my0mi4k3l1" path="res://globals/mouse/mouse_global.gd" id="1_1umih"]
+[ext_resource type="PackedScene" uid="uid://c2hsf3qakqox7" path="res://scenes/game_scene/alien/alien_scene.tscn" id="2_eh284"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1umih"]
 radius = 1.0
 
 [node name="MouseGlobal" type="Node2D"]
+z_index = 10
 script = ExtResource("1_1umih")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-z_index = 10
+
+[node name="AlienScene" parent="." instance=ExtResource("2_eh284")]
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_mask = 7

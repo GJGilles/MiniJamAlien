@@ -15,6 +15,7 @@ const SPORE_SCENE: PackedScene = preload("res://scenes/game_scene/spore/spore_sc
 		data = value
 		if data != null:
 			data.on_update.connect(on_update)
+			data.on_spore_added.connect(add_spore)
 			on_update()
 
 var is_ready: bool = false
@@ -30,10 +31,22 @@ func on_update():
 	background.texture = GAME.get_room_texture(data.get_activity_type())
 	alien_scene.data = data.alien
 
-func deposit(carry: MOUSE.CarryData):
-	if carry is MOUSE.CarryFoodData and alien_scene.data != null:
-		if alien_scene.data.do_food_want(carry.food):
+func deposit(carry: CarryData, from: RoomScene):
+	if carry is CarryFoodData:
+		if data.alien != null and data.alien.do_food_want(carry.food):
 			data.try_add_spore()
+	elif carry is CarryAlienData:
+		if data.alien != null and from != null:
+			from.data.alien = data.alien
+		data.alien = carry.alien
+
+func pickup() -> CarryData:
+	if data.alien != null:
+		var carry: CarryData = CarryAlienData.create(data.alien)
+		data.alien = null
+		return carry
+	else:
+		return null
 
 func add_spore(data: SporeData):
 	var spore: SporeScene = SPORE_SCENE.instantiate()

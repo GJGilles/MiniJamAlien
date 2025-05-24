@@ -25,6 +25,7 @@ var data: AlienData:
 			visible = true
 			data.on_update.connect(on_update)
 			sprite_2d.texture = data.get_sprite()
+			on_update()
 
 var is_ready: bool = false
 

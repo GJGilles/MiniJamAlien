@@ -1,1 +1,3 @@
 extends ShopItemData
+
+class_name ShopFacilityData

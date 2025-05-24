@@ -6,3 +6,12 @@ res://scenes/game_scene/shop/shop_scene.tscn
 res://scenes/game_scene/room/room_scene.tscn
 res://globals/room/room_global.gd
 res://data/shop/shop_item_data.gd
+res://scenes/game_scene/room/room_scene.gd
+res://scenes/game_scene/alien/alien_scene.tscn
+res://globals/mouse/mouse_global.gd
+res://data/carry/carry_data.gd
+res://data/carry/carry_alien_data.gd
+res://data/carry/carry_food_data.gd
+res://globals/mouse/mouse_global.tscn
+res://scenes/game_scene/alien/alien_scene.gd
+res://data/shop/shop_facility_data.gd

@@ -7,20 +7,8 @@ enum MOUSE_MODE {
 	SELL
 }
 
-class CarryData:
-	var sprite: Texture2D
-
-class CarryFoodData extends CarryData:
-	var food: GAME.FOOD_TYPE
-	
-	static func create(s: Texture2D, f: GAME.FOOD_TYPE) -> CarryFoodData:
-		var data: CarryData = new()
-		data.sprite = s
-		data.food = f
-		return data
-		
-
 @onready var sprite_2d: Sprite2D = $Sprite2D
+@onready var alien_scene: AlienScene = $AlienScene
 
 const SUCK_FORCE: float = 1000
 
@@ -38,11 +26,17 @@ var curr_carry: CarryData:
 		if mode == MOUSE_MODE.CARRY:
 			curr_carry = value
 			if value != null:
-				sprite_2d.texture = curr_carry.sprite
+				if value is CarryFoodData:
+					sprite_2d.texture = GAME.get_food_texture(value.food)
+				elif value is CarryAlienData:
+					alien_scene.data = value.alien
+					
 			else:
 				sprite_2d.texture = null
+				alien_scene.data = null
 
 var curr_target: RoomScene
+var curr_source: RoomScene
 
 func _ready() -> void:
 	mode = MOUSE_MODE.CARRY
@@ -56,11 +50,17 @@ func _input(event: InputEvent) -> void:
 		MOUSE_MODE.CARRY:
 			if event is InputEventMouseMotion:
 				position = (event.position - get_canvas_transform().origin) / get_canvas_transform().get_scale()
-			elif event is InputEventMouseButton:
-				if event.button_index == MouseButton.MOUSE_BUTTON_LEFT and not event.pressed:
-					if curr_target != null and curr_carry != null:
-						curr_target.deposit(curr_carry)
+			elif event is InputEventMouseButton and event.button_index == MouseButton.MOUSE_BUTTON_LEFT:
+				if event.pressed and curr_carry == null and curr_target != null:
+					curr_carry = curr_target.pickup()
+					curr_source = curr_target
+				elif not event.pressed and curr_carry != null:
+					if curr_target != null:
+						curr_target.deposit(curr_carry, curr_source)
+					elif curr_carry is CarryAlienData:
+						curr_source.deposit(curr_carry, null)
 					curr_carry = null
+						
 		MOUSE_MODE.SUCK:
 			if event is InputEventMouseMotion:
 				position = (event.position - get_canvas_transform().origin) / get_canvas_transform().get_scale()
