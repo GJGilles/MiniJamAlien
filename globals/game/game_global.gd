@@ -16,7 +16,7 @@ enum ACTIVITY_TYPE {
 	SPIN
 }
 
-enum SPORE_TYPE {
+enum ALIEN_TYPE {
 	BLUE,
 	GREEN,
 	ORANGE,
@@ -25,7 +25,34 @@ enum SPORE_TYPE {
 	YELLOW
 }
 
-var money: int = 0
+var money: int:
+	get:
+		return money
+	set(value):
+		money = value
+		on_update.emit()
+
+signal on_update()
+
+func _ready() -> void:
+	money = 10
+
+func get_alien_texture(alien: ALIEN_TYPE) -> Texture2D:
+	match alien:
+		ALIEN_TYPE.BLUE:
+			return load("res://assets/alien/blue.png")
+		ALIEN_TYPE.GREEN:
+			return load("res://assets/alien/green.png")
+		ALIEN_TYPE.ORANGE:
+			return load("res://assets/alien/orange.png")
+		ALIEN_TYPE.PURPLE:
+			return load("res://assets/alien/purple.png")
+		ALIEN_TYPE.RED:
+			return load("res://assets/alien/red.png")
+		ALIEN_TYPE.YELLOW:
+			return load("res://assets/alien/yellow.png")
+		_:
+			return null
 
 func get_food_texture(food: FOOD_TYPE) -> Texture2D:
 	match food:
@@ -41,21 +68,21 @@ func get_food_texture(food: FOOD_TYPE) -> Texture2D:
 func get_room_texture(activity: ACTIVITY_TYPE) -> Texture2D:
 	match activity:
 		_:
-			return null
+			return load("res://assets/room/none.png")
 
-func get_spore_texture(spore: SPORE_TYPE) -> Texture2D:
+func get_spore_texture(spore: ALIEN_TYPE) -> Texture2D:
 	match spore:
-		SPORE_TYPE.BLUE:
-			return load("res://assets/alien/blue.png")
-		SPORE_TYPE.GREEN:
-			return load("res://assets/alien/green.png")
-		SPORE_TYPE.ORANGE:
-			return load("res://assets/alien/orange.png")
-		SPORE_TYPE.PURPLE:
-			return load("res://assets/alien/purple.png")
-		SPORE_TYPE.RED:
-			return load("res://assets/alien/red.png")
-		SPORE_TYPE.YELLOW:
-			return load("res://assets/alien/yellow.png")
+		ALIEN_TYPE.BLUE:
+			return load("res://assets/spore/blue.png")
+		ALIEN_TYPE.GREEN:
+			return load("res://assets/spore/green.png")
+		ALIEN_TYPE.ORANGE:
+			return load("res://assets/spore/orange.png")
+		ALIEN_TYPE.PURPLE:
+			return load("res://assets/spore/purple.png")
+		ALIEN_TYPE.RED:
+			return load("res://assets/spore/red.png")
+		ALIEN_TYPE.YELLOW:
+			return load("res://assets/spore/yellow.png")
 		_:
 			return null

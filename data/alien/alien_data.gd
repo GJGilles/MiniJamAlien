@@ -37,7 +37,7 @@ var time_food_want: float:
 				time_food_want = 0
 			else:
 				time_food_want = value
-		elif value > get_food_cooldown():
+		elif value > get_food_cooldown() and get_food_wants().size() > 0:
 			var idx: int = randi() % get_food_wants().keys().size()
 			curr_food_want = get_food_wants().keys()[idx]
 			time_food_want = 0
@@ -55,7 +55,7 @@ var time_activity_want: float:
 				time_activity_want = 0
 			else:
 				time_activity_want = value
-		elif value > get_activity_cooldown():
+		elif value > get_activity_cooldown() and get_activity_wants().size() > 0:
 			var idx: int = randi() % get_activity_wants().keys().size()
 			curr_activity_want = get_activity_wants().keys()[idx]
 			time_activity_want = 0
@@ -66,6 +66,10 @@ signal on_update()
 
 func _init():
 	happiness = 20
+	
+	time_food_want = 10
+	time_activity_want = 0
+	
 	curr_food_want = GAME.FOOD_TYPE.NONE
 	curr_activity_want = GAME.ACTIVITY_TYPE.NONE
 

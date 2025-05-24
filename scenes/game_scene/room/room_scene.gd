@@ -4,6 +4,7 @@ class_name RoomScene
 
 const SPORE_SCENE: PackedScene = preload("res://scenes/game_scene/spore/spore_scene.tscn")
 
+@onready var background: Sprite2D = $Background
 @onready var alien_scene: AlienScene = $AlienScene
 @onready var spores: Node2D = $Spores
 
@@ -16,7 +17,17 @@ const SPORE_SCENE: PackedScene = preload("res://scenes/game_scene/spore/spore_sc
 			data.on_update.connect(on_update)
 			on_update()
 
+var is_ready: bool = false
+
+func _ready() -> void:
+	is_ready = true
+
 func on_update():
+	if !is_ready:
+		await ready
+	
+	visible = data.is_unlocked
+	background.texture = GAME.get_room_texture(data.get_activity_type())
 	alien_scene.data = data.alien
 
 func deposit(carry: MOUSE.CarryData):

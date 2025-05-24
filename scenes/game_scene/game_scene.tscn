@@ -1,39 +1,17 @@
-[gd_scene load_steps=17 format=3 uid="uid://dov0rwj03vh4o"]
+[gd_scene load_steps=13 format=3 uid="uid://dov0rwj03vh4o"]
 
 [ext_resource type="PackedScene" uid="uid://bnuoq47r4b8ue" path="res://scenes/game_scene/room/room_scene.tscn" id="1_pwder"]
 [ext_resource type="PackedScene" uid="uid://wf7kp2sossa1" path="res://scenes/game_scene/food/food_scene.tscn" id="2_72663"]
-[ext_resource type="Script" uid="uid://cfnnk8spvdvsq" path="res://data/alien/alien_red_data.gd" id="2_ducuf"]
-[ext_resource type="Script" uid="uid://7ve1obn7ab5d" path="res://data/alien/alien_blue_data.gd" id="3_dgii4"]
+[ext_resource type="Resource" uid="uid://mw7drbrjvyv1" path="res://resources/rooms/room_1.tres" id="2_hqmgi"]
+[ext_resource type="Resource" uid="uid://bgyu0o2cut54n" path="res://resources/rooms/room_2.tres" id="3_3di6p"]
 [ext_resource type="PackedScene" uid="uid://cbrxpudjvhjs" path="res://scenes/game_scene/tool/tool_scene.tscn" id="3_o81xq"]
-[ext_resource type="Script" uid="uid://bdxmkri1uxhyt" path="res://data/alien/alien_green_data.gd" id="4_hqmgi"]
+[ext_resource type="Resource" uid="uid://c1q8th1d7hmme" path="res://resources/rooms/room_3.tres" id="4_jytbd"]
 [ext_resource type="PackedScene" uid="uid://brwv2x0e5ovtx" path="res://scenes/game_scene/shop/shop_scene.tscn" id="4_xb203"]
-[ext_resource type="Script" uid="uid://ds6ykmtm66mdp" path="res://data/alien/alien_purple_data.gd" id="5_3di6p"]
-[ext_resource type="Script" uid="uid://mpl1ibwo6tc2" path="res://data/alien/alien_orange_data.gd" id="6_jytbd"]
-[ext_resource type="Script" uid="uid://c3aebtfg8qqsr" path="res://data/alien/alien_yellow_data.gd" id="7_iprv4"]
-
-[sub_resource type="Resource" id="Resource_j8flk"]
-script = ExtResource("2_ducuf")
-metadata/_custom_type_script = ExtResource("2_ducuf")
-
-[sub_resource type="Resource" id="Resource_1ypwy"]
-script = ExtResource("3_dgii4")
-metadata/_custom_type_script = ExtResource("3_dgii4")
-
-[sub_resource type="Resource" id="Resource_hunbn"]
-script = ExtResource("4_hqmgi")
-metadata/_custom_type_script = ExtResource("4_hqmgi")
-
-[sub_resource type="Resource" id="Resource_7aaem"]
-script = ExtResource("5_3di6p")
-metadata/_custom_type_script = ExtResource("5_3di6p")
-
-[sub_resource type="Resource" id="Resource_bwcss"]
-script = ExtResource("6_jytbd")
-metadata/_custom_type_script = ExtResource("6_jytbd")
-
-[sub_resource type="Resource" id="Resource_hn7ev"]
-script = ExtResource("7_iprv4")
-metadata/_custom_type_script = ExtResource("7_iprv4")
+[ext_resource type="Resource" uid="uid://bu2ucoslq8l8u" path="res://resources/rooms/room_4.tres" id="5_iprv4"]
+[ext_resource type="Resource" uid="uid://bxjljpb6nj7f3" path="res://resources/rooms/room_5.tres" id="6_1ypwy"]
+[ext_resource type="Resource" uid="uid://bp61s61gunlpj" path="res://resources/rooms/room_6.tres" id="7_hunbn"]
+[ext_resource type="Resource" uid="uid://djfbakmj27k86" path="res://resources/rooms/room_7.tres" id="8_7aaem"]
+[ext_resource type="PackedScene" uid="uid://d13qljdbd3ba2" path="res://scenes/game_scene/money/money_scene.tscn" id="12_3di6p"]
 
 [node name="GameScene" type="Node2D"]
 
@@ -43,30 +21,31 @@ zoom = Vector2(0.3, 0.3)
 [node name="Rooms" type="Node2D" parent="."]
 
 [node name="RoomScene1" parent="Rooms" instance=ExtResource("1_pwder")]
-alien = SubResource("Resource_j8flk")
+data = ExtResource("2_hqmgi")
 
 [node name="RoomScene2" parent="Rooms" instance=ExtResource("1_pwder")]
 position = Vector2(-560, 0)
-alien = SubResource("Resource_1ypwy")
+data = ExtResource("3_3di6p")
 
 [node name="RoomScene3" parent="Rooms" instance=ExtResource("1_pwder")]
 position = Vector2(-280, -480)
-alien = SubResource("Resource_hunbn")
+data = ExtResource("4_jytbd")
 
 [node name="RoomScene4" parent="Rooms" instance=ExtResource("1_pwder")]
 position = Vector2(-280, 480)
-alien = SubResource("Resource_7aaem")
+data = ExtResource("5_iprv4")
 
 [node name="RoomScene5" parent="Rooms" instance=ExtResource("1_pwder")]
 position = Vector2(280, -480)
-alien = SubResource("Resource_bwcss")
+data = ExtResource("6_1ypwy")
 
 [node name="RoomScene6" parent="Rooms" instance=ExtResource("1_pwder")]
 position = Vector2(280, 480)
+data = ExtResource("7_hunbn")
 
 [node name="RoomScene7" parent="Rooms" instance=ExtResource("1_pwder")]
 position = Vector2(560, 0)
-alien = SubResource("Resource_hn7ev")
+data = ExtResource("8_7aaem")
 
 [node name="FoodBlue" parent="." instance=ExtResource("2_72663")]
 offset_left = -689.0
@@ -104,4 +83,5 @@ offset_bottom = 766.0
 mode = 1
 
 [node name="ShopScene" parent="." instance=ExtResource("4_xb203")]
-visible = false
+
+[node name="MoneyScene" parent="." instance=ExtResource("12_3di6p")]

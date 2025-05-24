@@ -6,7 +6,7 @@ func get_sprite() -> Texture2D:
 	return load("res://assets/alien/red.png")
 
 func get_spore() -> SporeData:
-	return SporeData.create(GAME.SPORE_TYPE.RED, 1)
+	return SporeData.create(GAME.ALIEN_TYPE.RED, 1)
 
 func get_food_wants() -> Dictionary[GAME.FOOD_TYPE, int]:
 	return {

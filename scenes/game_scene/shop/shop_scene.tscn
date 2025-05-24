@@ -1,6 +1,103 @@
-[gd_scene load_steps=2 format=3 uid="uid://brwv2x0e5ovtx"]
+[gd_scene load_steps=22 format=3 uid="uid://brwv2x0e5ovtx"]
 
 [ext_resource type="PackedScene" uid="uid://7a7kpmnv4514" path="res://scenes/game_scene/shop/item/shop_item_scene.tscn" id="1_roqrc"]
+[ext_resource type="Script" uid="uid://bmk736v16lttw" path="res://data/shop/shop_upgrade_data.gd" id="2_3a8af"]
+[ext_resource type="Resource" uid="uid://bgyu0o2cut54n" path="res://resources/rooms/room_2.tres" id="3_e07u7"]
+[ext_resource type="Resource" uid="uid://c1q8th1d7hmme" path="res://resources/rooms/room_3.tres" id="4_e07u7"]
+[ext_resource type="Resource" uid="uid://bu2ucoslq8l8u" path="res://resources/rooms/room_4.tres" id="5_wpbuu"]
+[ext_resource type="Resource" uid="uid://bxjljpb6nj7f3" path="res://resources/rooms/room_5.tres" id="6_c7bn0"]
+[ext_resource type="Resource" uid="uid://bp61s61gunlpj" path="res://resources/rooms/room_6.tres" id="7_prqai"]
+[ext_resource type="Resource" uid="uid://djfbakmj27k86" path="res://resources/rooms/room_7.tres" id="8_87e7f"]
+[ext_resource type="Script" uid="uid://c7e73f38gp4r3" path="res://data/shop/shop_alien_data.gd" id="9_wlc6m"]
+
+[sub_resource type="Resource" id="Resource_wpbuu"]
+script = ExtResource("2_3a8af")
+room = ExtResource("3_e07u7")
+title = "Room 2"
+cost = 1
+metadata/_custom_type_script = ExtResource("2_3a8af")
+
+[sub_resource type="Resource" id="Resource_c7bn0"]
+script = ExtResource("2_3a8af")
+room = ExtResource("4_e07u7")
+prev = ExtResource("3_e07u7")
+title = "Room 3"
+cost = 1
+metadata/_custom_type_script = ExtResource("2_3a8af")
+
+[sub_resource type="Resource" id="Resource_prqai"]
+script = ExtResource("2_3a8af")
+room = ExtResource("5_wpbuu")
+prev = ExtResource("4_e07u7")
+title = "Room 4"
+cost = 1
+metadata/_custom_type_script = ExtResource("2_3a8af")
+
+[sub_resource type="Resource" id="Resource_87e7f"]
+script = ExtResource("2_3a8af")
+room = ExtResource("6_c7bn0")
+prev = ExtResource("5_wpbuu")
+title = "Room 5"
+cost = 1
+metadata/_custom_type_script = ExtResource("2_3a8af")
+
+[sub_resource type="Resource" id="Resource_wlc6m"]
+script = ExtResource("2_3a8af")
+room = ExtResource("7_prqai")
+prev = ExtResource("6_c7bn0")
+title = "Room 6"
+cost = 1
+metadata/_custom_type_script = ExtResource("2_3a8af")
+
+[sub_resource type="Resource" id="Resource_4x1r4"]
+script = ExtResource("2_3a8af")
+room = ExtResource("8_87e7f")
+prev = ExtResource("7_prqai")
+title = "Room 7"
+cost = 1
+metadata/_custom_type_script = ExtResource("2_3a8af")
+
+[sub_resource type="Resource" id="Resource_4x80t"]
+script = ExtResource("9_wlc6m")
+type = 0
+title = "Blue Alien"
+cost = 1
+metadata/_custom_type_script = ExtResource("9_wlc6m")
+
+[sub_resource type="Resource" id="Resource_003jr"]
+script = ExtResource("9_wlc6m")
+type = 4
+title = "Red Alien"
+cost = 1
+metadata/_custom_type_script = ExtResource("9_wlc6m")
+
+[sub_resource type="Resource" id="Resource_el1qr"]
+script = ExtResource("9_wlc6m")
+type = 5
+title = "Yellow Alien"
+cost = 1
+metadata/_custom_type_script = ExtResource("9_wlc6m")
+
+[sub_resource type="Resource" id="Resource_2rl1y"]
+script = ExtResource("9_wlc6m")
+type = 3
+title = "Purple Alien"
+cost = 1
+metadata/_custom_type_script = ExtResource("9_wlc6m")
+
+[sub_resource type="Resource" id="Resource_eg3xt"]
+script = ExtResource("9_wlc6m")
+type = 2
+title = "Orange Alien"
+cost = 1
+metadata/_custom_type_script = ExtResource("9_wlc6m")
+
+[sub_resource type="Resource" id="Resource_m6abw"]
+script = ExtResource("9_wlc6m")
+type = 1
+title = "Green Alien"
+cost = 1
+metadata/_custom_type_script = ExtResource("9_wlc6m")
 
 [node name="ShopScene" type="CanvasLayer"]
 
@@ -17,26 +114,50 @@ horizontal_scroll_mode = 0
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="ShopItemScene" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_roqrc")]
+[node name="Room2" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_roqrc")]
 layout_mode = 2
+data = SubResource("Resource_wpbuu")
 
-[node name="ShopItemScene2" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_roqrc")]
+[node name="Room3" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_roqrc")]
 layout_mode = 2
+data = SubResource("Resource_c7bn0")
 
-[node name="ShopItemScene3" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_roqrc")]
+[node name="Room4" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_roqrc")]
 layout_mode = 2
+data = SubResource("Resource_prqai")
 
-[node name="ShopItemScene4" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_roqrc")]
+[node name="Room5" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_roqrc")]
 layout_mode = 2
+data = SubResource("Resource_87e7f")
 
-[node name="ShopItemScene5" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_roqrc")]
+[node name="Room6" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_roqrc")]
 layout_mode = 2
+data = SubResource("Resource_wlc6m")
 
-[node name="ShopItemScene6" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_roqrc")]
+[node name="Room7" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_roqrc")]
 layout_mode = 2
+data = SubResource("Resource_4x1r4")
 
-[node name="ShopItemScene7" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_roqrc")]
+[node name="Blue" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_roqrc")]
 layout_mode = 2
+data = SubResource("Resource_4x80t")
 
-[node name="ShopItemScene8" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_roqrc")]
+[node name="Red" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_roqrc")]
 layout_mode = 2
+data = SubResource("Resource_003jr")
+
+[node name="Yellow" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_roqrc")]
+layout_mode = 2
+data = SubResource("Resource_el1qr")
+
+[node name="Purple" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_roqrc")]
+layout_mode = 2
+data = SubResource("Resource_2rl1y")
+
+[node name="Orange" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_roqrc")]
+layout_mode = 2
+data = SubResource("Resource_eg3xt")
+
+[node name="Green" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_roqrc")]
+layout_mode = 2
+data = SubResource("Resource_m6abw")

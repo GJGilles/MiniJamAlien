@@ -2,26 +2,27 @@ extends Resource
 
 class_name ShopItemData
 
+@export var title: String = ""
+@export var cost: int = 1
+
+signal on_update()
+
+func is_active() -> bool:
+	return true
+
 func get_sprite() -> Texture2D:
 	return null
 
-func get_cost() -> int:
-	return 1
-
-func get_title() -> String:
-	return ""
-
-func requires_room() -> bool:
-	return true
+func can_purchase() -> bool:
+	return GAME.money >= cost
 
 func purchase():
-	if GAME.money < get_cost():
-		return
-	elif requires_room():
-		pass
-	else:
-		GAME.money -= get_cost()
+	if can_purchase():
+		GAME.money -= cost
 		on_purchase()
+	else:
+		pass
+	on_update.emit()
 		
 func on_purchase():
 	pass
