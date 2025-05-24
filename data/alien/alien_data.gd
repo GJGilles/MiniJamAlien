@@ -72,11 +72,8 @@ func _init():
 func get_sprite() -> Texture2D:
 	return null
 
-func get_spore_sprite() -> Texture2D:
+func get_spore() -> SporeData:
 	return null
-
-func get_spore_cost() -> int:
-	return 1
 
 func get_food_wants() -> Dictionary[GAME.FOOD_TYPE, int]:
 	return {}

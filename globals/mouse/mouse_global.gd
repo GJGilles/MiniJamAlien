@@ -76,5 +76,5 @@ func _area_exited(area: Area2D) -> void:
 func _body_entered(body: Node2D) -> void:
 	if body is SporeScene and mode == MOUSE_MODE.SUCK and Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 		var spore: SporeScene = body
-		GAME.money += spore.cost
-		body.queue_free()
+		GAME.money += spore.data.value
+		spore.data.delete()

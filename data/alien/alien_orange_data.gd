@@ -5,11 +5,8 @@ class_name AlienRedOrange
 func get_sprite() -> Texture2D:
 	return load("res://assets/alien/orange.png")
 
-func get_spore_sprite() -> Texture2D:
-	return load("res://assets/spore/orange.png")
-
-func get_spore_cost() -> int:
-	return 3
+func get_spore() -> SporeData:
+	return SporeData.create(GAME.SPORE_TYPE.ORANGE, 5)
 
 func get_food_wants() -> Dictionary[GAME.FOOD_TYPE, int]:
 	return {
