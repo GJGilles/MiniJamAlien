@@ -2,24 +2,8 @@ extends Resource
 
 class_name AlienData
 
-enum FOOD_TYPE {
-	NONE,
-	
-	GREEN,
-	BLUE,
-	PURPLE
-}
-
-enum ACTIVITY_TYPE {
-	NONE,
-	
-	SPRAY,
-	POKE,
-	SPIN
-}
-
-const FOOD_WANT_TIMEOUT: float = 1
-const ACTIVITY_WANT_TIMEOUT: float = 5
+const FOOD_WANT_TIMEOUT: float = 5
+const ACTIVITY_WANT_TIMEOUT: float = 10
 
 var happiness: int:
 	get:
@@ -28,14 +12,14 @@ var happiness: int:
 		happiness = clamp(value, 0, 100)
 		on_update.emit()
 
-var curr_food_want: FOOD_TYPE:
+var curr_food_want: GAME.FOOD_TYPE:
 	get:
 		return curr_food_want
 	set(value):
 		curr_food_want = value
 		on_update.emit()
 		
-var curr_activity_want: ACTIVITY_TYPE:
+var curr_activity_want: GAME.ACTIVITY_TYPE:
 	get:
 		return curr_activity_want
 	set(value):
@@ -46,10 +30,10 @@ var time_food_want: float:
 	get:
 		return time_food_want
 	set(value):
-		if curr_food_want != FOOD_TYPE.NONE:
+		if curr_food_want != GAME.FOOD_TYPE.NONE:
 			if value > FOOD_WANT_TIMEOUT:
 				happiness -= get_food_wants()[curr_food_want]
-				curr_food_want = FOOD_TYPE.NONE
+				curr_food_want = GAME.FOOD_TYPE.NONE
 				time_food_want = 0
 			else:
 				time_food_want = value
@@ -64,10 +48,10 @@ var time_activity_want: float:
 	get:
 		return time_activity_want
 	set(value):
-		if curr_activity_want != ACTIVITY_TYPE.NONE:
+		if curr_activity_want != GAME.ACTIVITY_TYPE.NONE:
 			if value > ACTIVITY_WANT_TIMEOUT:
 				happiness -= get_activity_wants()[curr_activity_want]
-				curr_activity_want = ACTIVITY_TYPE.NONE
+				curr_activity_want = GAME.ACTIVITY_TYPE.NONE
 				time_activity_want = 0
 			else:
 				time_activity_want = value
@@ -82,16 +66,22 @@ signal on_update()
 
 func _init():
 	happiness = 20
-	curr_food_want = FOOD_TYPE.NONE
-	curr_activity_want = ACTIVITY_TYPE.NONE
+	curr_food_want = GAME.FOOD_TYPE.NONE
+	curr_activity_want = GAME.ACTIVITY_TYPE.NONE
 
 func get_sprite() -> Texture2D:
 	return null
 
-func get_food_wants() -> Dictionary[FOOD_TYPE, int]:
+func get_spore_sprite() -> Texture2D:
+	return null
+
+func get_spore_cost() -> int:
+	return 1
+
+func get_food_wants() -> Dictionary[GAME.FOOD_TYPE, int]:
 	return {}
 
-func get_activity_wants() -> Dictionary[ACTIVITY_TYPE, int]:
+func get_activity_wants() -> Dictionary[GAME.ACTIVITY_TYPE, int]:
 	return {}
 
 func get_food_cooldown() -> float:
@@ -100,14 +90,17 @@ func get_food_cooldown() -> float:
 func get_activity_cooldown() -> float:
 	return 8.0
 	
-func do_food_want(food: FOOD_TYPE):
+func do_food_want(food: GAME.FOOD_TYPE) -> bool:
 	if curr_food_want == food:
 		happiness += get_food_wants()[curr_food_want]
-		curr_food_want = FOOD_TYPE.NONE
+		curr_food_want = GAME.FOOD_TYPE.NONE
 		time_food_want = 0
+		return true
+	else:
+		return false
 
-func do_activity_want(activity: ACTIVITY_TYPE):
+func do_activity_want(activity: GAME.ACTIVITY_TYPE):
 	if curr_activity_want == activity:
 		happiness += get_activity_wants()[curr_activity_want]
-		curr_activity_want = ACTIVITY_TYPE.NONE
+		curr_activity_want = GAME.ACTIVITY_TYPE.NONE
 		curr_activity_want = 0

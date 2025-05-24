@@ -1,3 +1,32 @@
-[gd_scene format=3 uid="uid://dov0rwj03vh4o"]
+[gd_scene load_steps=4 format=3 uid="uid://dov0rwj03vh4o"]
+
+[ext_resource type="PackedScene" uid="uid://bnuoq47r4b8ue" path="res://scenes/game_scene/room/room_scene.tscn" id="1_pwder"]
+[ext_resource type="PackedScene" uid="uid://wf7kp2sossa1" path="res://scenes/game_scene/food/food_scene.tscn" id="2_72663"]
+[ext_resource type="PackedScene" uid="uid://cbrxpudjvhjs" path="res://scenes/game_scene/tool/tool_scene.tscn" id="3_o81xq"]
 
 [node name="GameScene" type="Node2D"]
+
+[node name="RoomScene" parent="." instance=ExtResource("1_pwder")]
+position = Vector2(288, 252)
+
+[node name="FoodScene" parent="." instance=ExtResource("2_72663")]
+offset_left = 704.0
+offset_top = 336.0
+offset_right = 704.0
+offset_bottom = 336.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.25, 0.25)
+
+[node name="CarryTool" parent="." instance=ExtResource("3_o81xq")]
+offset_left = -1810.0
+offset_top = 891.0
+offset_right = -1810.0
+offset_bottom = 891.0
+
+[node name="SuckTool" parent="." instance=ExtResource("3_o81xq")]
+offset_left = -1499.0
+offset_top = 895.0
+offset_right = -1499.0
+offset_bottom = 895.0
+mode = 1

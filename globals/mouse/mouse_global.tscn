@@ -12,9 +12,11 @@ script = ExtResource("1_1umih")
 z_index = 10
 
 [node name="Area2D" type="Area2D" parent="."]
+collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_1umih")
 
 [connection signal="area_entered" from="Area2D" to="." method="_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_area_exited"]
+[connection signal="body_entered" from="Area2D" to="." method="_body_entered"]

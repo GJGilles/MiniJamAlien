@@ -5,14 +5,14 @@ class_name AlienRedData
 func get_sprite() -> Texture2D:
 	return load("res://assets/alien/red.png")
 
-func get_food_wants() -> Dictionary[FOOD_TYPE, int]:
+func get_food_wants() -> Dictionary[GAME.FOOD_TYPE, int]:
 	return {
-		FOOD_TYPE.GREEN: 5
+		GAME.FOOD_TYPE.GREEN: 5
 	}
 
-func get_activity_wants() -> Dictionary[ACTIVITY_TYPE, int]:
+func get_activity_wants() -> Dictionary[GAME.ACTIVITY_TYPE, int]:
 	return {
-		ACTIVITY_TYPE.SPRAY: 20
+		GAME.ACTIVITY_TYPE.SPRAY: 20
 	}
 
 func get_food_cooldown() -> float:

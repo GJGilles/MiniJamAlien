@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://c2hsf3qakqox7"]
+[gd_scene load_steps=7 format=3 uid="uid://c2hsf3qakqox7"]
 
 [ext_resource type="Script" uid="uid://blcj8n2mna7xf" path="res://scenes/game_scene/alien/alien_scene.gd" id="1_r5wbw"]
 [ext_resource type="Script" uid="uid://cfnnk8spvdvsq" path="res://data/alien/alien_red_data.gd" id="2_42vbb"]
 [ext_resource type="Texture2D" uid="uid://cimv4si6n7jqy" path="res://assets/alien/orange.png" id="3_42vbb"]
+[ext_resource type="Texture2D" uid="uid://4e0pdo17esir" path="res://assets/ui/thought.png" id="4_qwp8p"]
+[ext_resource type="Texture2D" uid="uid://3yg0c8rqcvho" path="res://assets/food/green.png" id="5_v4ckg"]
 
 [sub_resource type="Resource" id="Resource_qwp8p"]
 script = ExtResource("2_42vbb")
@@ -14,17 +16,6 @@ data = SubResource("Resource_qwp8p")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("3_42vbb")
-
-[node name="Label" type="Label" parent="Sprite2D"]
-anchors_preset = 10
-anchor_right = 1.0
-offset_left = -123.0
-offset_top = -140.5
-offset_right = -123.0
-offset_bottom = -117.5
-grow_horizontal = 2
-text = "Test"
-horizontal_alignment = 1
 
 [node name="ProgressBar" type="ProgressBar" parent="Sprite2D"]
 anchors_preset = 12
@@ -40,3 +31,28 @@ grow_vertical = 0
 step = 1.0
 value = 40.0
 show_percentage = false
+
+[node name="Thought" type="TextureRect" parent="Sprite2D"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = -123.0
+offset_top = -350.0
+offset_right = -123.0
+offset_bottom = -104.0
+grow_horizontal = 2
+texture = ExtResource("4_qwp8p")
+expand_mode = 5
+stretch_mode = 5
+
+[node name="Want" type="TextureRect" parent="Sprite2D/Thought"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.2
+anchor_top = 0.2
+anchor_right = 0.8
+anchor_bottom = 0.65
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_v4ckg")
+expand_mode = 3
+stretch_mode = 5

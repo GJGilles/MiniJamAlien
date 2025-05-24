@@ -1,11 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://bnuoq47r4b8ue"]
+[gd_scene load_steps=7 format=3 uid="uid://bnuoq47r4b8ue"]
 
 [ext_resource type="Script" uid="uid://bbepqc66pp85j" path="res://scenes/game_scene/room/room_scene.gd" id="1_2nqp8"]
 [ext_resource type="Texture2D" uid="uid://dt8mgttahg2u2" path="res://assets/room/none.png" id="1_opyto"]
 [ext_resource type="PackedScene" uid="uid://c2hsf3qakqox7" path="res://scenes/game_scene/alien/alien_scene.tscn" id="2_2nqp8"]
+[ext_resource type="Script" uid="uid://b1bglf0bnoo2t" path="res://addons/donut_collision_polygon2D/donut_collision_polygon2D.gd" id="4_lmom5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_opyto"]
 radius = 260.0
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_lmom5"]
+friction = 0.0
+bounce = 0.5
 
 [node name="RoomScene" type="Area2D"]
 script = ExtResource("1_2nqp8")
@@ -17,3 +22,17 @@ texture = ExtResource("1_opyto")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_opyto")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 6
+collision_mask = 6
+physics_material_override = SubResource("PhysicsMaterial_lmom5")
+
+[node name="DonutCollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(1.6226e-14, -265, 51.6989, -259.908, 101.411, -244.828, 147.226, -220.339, 187.383, -187.383, 220.339, -147.226, 244.828, -101.411, 259.908, -51.6989, 265, 0, 259.908, 51.6989, 244.828, 101.411, 220.339, 147.226, 187.383, 187.383, 147.226, 220.339, 101.411, 244.828, 51.6989, 259.908, 1.6226e-14, 265, -51.6989, 259.908, -101.411, 244.828, -147.226, 220.339, -187.383, 187.383, -220.339, 147.226, -244.828, 101.411, -259.908, 51.6989, -265, 3.24521e-14, -259.908, -51.6989, -244.828, -101.411, -220.339, -147.226, -187.383, -187.383, -147.226, -220.339, -101.411, -244.828, -51.6989, -259.908, -4.86781e-14, -265, -4.68412e-14, -255, -49.748, -250.1, -97.5843, -235.589, -141.67, -212.025, -180.312, -180.312, -212.025, -141.67, -235.589, -97.5843, -250.1, -49.748, -255, 3.12275e-14, -250.1, 49.748, -235.589, 97.5843, -212.025, 141.67, -180.312, 180.312, -141.67, 212.025, -97.5843, 235.589, -49.748, 250.1, 1.56137e-14, 255, 49.748, 250.1, 97.5843, 235.589, 141.67, 212.025, 180.312, 180.312, 212.025, 141.67, 235.589, 97.5843, 250.1, 49.748, 255, 0, 250.1, -49.748, 235.589, -97.5843, 212.025, -141.67, 180.312, -180.312, 141.67, -212.025, 97.5843, -235.589, 49.748, -250.1, 1.56137e-14, -255, 0.0001, -265)
+script = ExtResource("4_lmom5")
+radius = 260.0
+width = 10.0
+metadata/_custom_type_script = ExtResource("4_lmom5")
+
+[node name="Spores" type="Node2D" parent="."]
