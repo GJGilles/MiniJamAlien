@@ -3,10 +3,11 @@ extends Node2D
 class_name AlienScene
 
 @onready var sprite_2d: Sprite2D = $Sprite2D
-@onready var progress_bar: ProgressBar = $ProgressBar
 
 @onready var thought: Sprite2D = $Thought
 @onready var want: Sprite2D = $Thought/Want
+
+@onready var happiness: Sprite2D = $Happiness
 
 var data: AlienData:
 	get: 
@@ -40,7 +41,16 @@ func _physics_process(delta: float) -> void:
 	data.time_activity_want += delta
 
 func on_update():
-	progress_bar.value = data.happiness
+	if data.happiness <= 20:
+		happiness.texture = load("res://assets/happiness/0.png")
+	elif data.happiness <= 40:
+		happiness.texture = load("res://assets/happiness/1.png")
+	elif data.happiness <= 60:
+		happiness.texture = load("res://assets/happiness/2.png")
+	elif data.happiness <= 80:
+		happiness.texture = load("res://assets/happiness/3.png")
+	else:
+		happiness.texture = load("res://assets/happiness/4.png")
 	
 	if data.curr_food_want == GAME.FOOD_TYPE.NONE:
 		thought.visible = false

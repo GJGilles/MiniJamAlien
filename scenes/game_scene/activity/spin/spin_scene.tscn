@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://dx6tp754oobrg"]
+[gd_scene load_steps=7 format=3 uid="uid://dx6tp754oobrg"]
 
 [ext_resource type="Script" uid="uid://dmcxl7txcdd0o" path="res://scenes/game_scene/activity/spin/spin_scene.gd" id="1_wixyo"]
 [ext_resource type="Texture2D" uid="uid://bd4ef2fu6us8u" path="res://assets/room/spin.png" id="2_wixyo"]
 [ext_resource type="Texture2D" uid="uid://cuh3ux8b683uj" path="res://assets/alien/green.png" id="3_wixyo"]
+[ext_resource type="Texture2D" uid="uid://ddh3ivvmv6fvi" path="res://assets/minigame/spin_back.png" id="4_uyqsl"]
+[ext_resource type="Texture2D" uid="uid://b5ytr18erwbe0" path="res://assets/minigame/spin_up.png" id="5_qqaef"]
+[ext_resource type="Texture2D" uid="uid://dgnt4j53jqftm" path="res://assets/minigame/spin_down.png" id="6_3pphv"]
 
 [node name="SpinScene" type="Node2D"]
 script = ExtResource("1_wixyo")
@@ -13,12 +16,20 @@ texture = ExtResource("2_wixyo")
 [node name="Alien" type="Sprite2D" parent="."]
 texture = ExtResource("3_wixyo")
 
-[node name="Button" type="Button" parent="."]
-offset_left = -20.0
-offset_top = 189.0
-offset_right = 20.0
-offset_bottom = 229.0
+[node name="ButtonBack" type="Sprite2D" parent="."]
+position = Vector2(0, 280)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("4_uyqsl")
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Button" type="TextureButton" parent="."]
+offset_left = -160.0
+offset_top = 120.0
+offset_right = 182.0
+offset_bottom = 441.0
+scale = Vector2(0.3, 0.3)
+pivot_offset = Vector2(160, 160)
+texture_normal = ExtResource("5_qqaef")
+texture_pressed = ExtResource("6_3pphv")
+stretch_mode = 3
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

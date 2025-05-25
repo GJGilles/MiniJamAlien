@@ -17,22 +17,18 @@ texture = ExtResource("2_hbeo6")
 texture = ExtResource("3_bd5mg")
 
 [node name="Clump0" type="Sprite2D" parent="Alien"]
-visible = false
 position = Vector2(-80, -85)
 texture = ExtResource("4_k061k")
 
 [node name="Clump1" type="Sprite2D" parent="Alien"]
-visible = false
 position = Vector2(81, -97)
 texture = ExtResource("5_o6la8")
 
 [node name="Clump2" type="Sprite2D" parent="Alien"]
-visible = false
 position = Vector2(87, 64)
 texture = ExtResource("4_k061k")
 
 [node name="Clump3" type="Sprite2D" parent="Alien"]
-visible = false
 position = Vector2(-81, 62)
 texture = ExtResource("6_x437l")
 
@@ -67,8 +63,6 @@ offset_left = -283.0
 offset_top = 263.0
 offset_right = -197.0
 offset_bottom = 344.0
-
-[node name="Camera2D" type="Camera2D" parent="."]
 
 [connection signal="pressed" from="Control/Button0" to="." method="clean" binds= [0]]
 [connection signal="pressed" from="Control/Button1" to="." method="clean" binds= [1]]

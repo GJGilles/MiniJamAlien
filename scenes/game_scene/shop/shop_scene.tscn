@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://brwv2x0e5ovtx"]
+[gd_scene load_steps=31 format=3 uid="uid://brwv2x0e5ovtx"]
 
 [ext_resource type="PackedScene" uid="uid://7a7kpmnv4514" path="res://scenes/game_scene/shop/item/shop_item_scene.tscn" id="1_roqrc"]
 [ext_resource type="Script" uid="uid://bmk736v16lttw" path="res://data/shop/shop_upgrade_data.gd" id="2_3a8af"]
@@ -8,9 +8,15 @@
 [ext_resource type="Resource" uid="uid://bxjljpb6nj7f3" path="res://resources/rooms/room_5.tres" id="6_c7bn0"]
 [ext_resource type="Resource" uid="uid://bp61s61gunlpj" path="res://resources/rooms/room_6.tres" id="7_prqai"]
 [ext_resource type="Resource" uid="uid://djfbakmj27k86" path="res://resources/rooms/room_7.tres" id="8_87e7f"]
+[ext_resource type="Resource" uid="uid://c2tvvj18rodh" path="res://resources/aliens/blue.tres" id="9_003jr"]
 [ext_resource type="Script" uid="uid://c7e73f38gp4r3" path="res://data/shop/shop_alien_data.gd" id="9_wlc6m"]
 [ext_resource type="Script" uid="uid://d1ilmwbkrl10a" path="res://data/shop/shop_facility_data.gd" id="10_4x80t"]
 [ext_resource type="Resource" uid="uid://mw7drbrjvyv1" path="res://resources/rooms/room_1.tres" id="11_003jr"]
+[ext_resource type="Resource" uid="uid://p5ppc0e1od0y" path="res://resources/aliens/red.tres" id="11_m1llw"]
+[ext_resource type="Resource" uid="uid://wodt1svfrbp0" path="res://resources/aliens/yellow.tres" id="12_llbf4"]
+[ext_resource type="Resource" uid="uid://dlivg7r2agpwo" path="res://resources/aliens/purple.tres" id="13_rmycv"]
+[ext_resource type="Resource" uid="uid://c65o2mnu4asb7" path="res://resources/aliens/orange.tres" id="14_1t5rt"]
+[ext_resource type="Resource" uid="uid://cyjvumkfatxvo" path="res://resources/aliens/green.tres" id="15_mmjt5"]
 
 [sub_resource type="Resource" id="Resource_wpbuu"]
 script = ExtResource("2_3a8af")
@@ -61,42 +67,42 @@ metadata/_custom_type_script = ExtResource("2_3a8af")
 
 [sub_resource type="Resource" id="Resource_4x80t"]
 script = ExtResource("9_wlc6m")
-type = 0
+alien = ExtResource("9_003jr")
 title = "Blue Alien"
 cost = 1
 metadata/_custom_type_script = ExtResource("9_wlc6m")
 
 [sub_resource type="Resource" id="Resource_003jr"]
 script = ExtResource("9_wlc6m")
-type = 4
+alien = ExtResource("11_m1llw")
 title = "Red Alien"
 cost = 1
 metadata/_custom_type_script = ExtResource("9_wlc6m")
 
 [sub_resource type="Resource" id="Resource_el1qr"]
 script = ExtResource("9_wlc6m")
-type = 5
+alien = ExtResource("12_llbf4")
 title = "Yellow Alien"
 cost = 1
 metadata/_custom_type_script = ExtResource("9_wlc6m")
 
 [sub_resource type="Resource" id="Resource_2rl1y"]
 script = ExtResource("9_wlc6m")
-type = 3
+alien = ExtResource("13_rmycv")
 title = "Purple Alien"
 cost = 1
 metadata/_custom_type_script = ExtResource("9_wlc6m")
 
 [sub_resource type="Resource" id="Resource_eg3xt"]
 script = ExtResource("9_wlc6m")
-type = 2
+alien = ExtResource("14_1t5rt")
 title = "Orange Alien"
 cost = 1
 metadata/_custom_type_script = ExtResource("9_wlc6m")
 
 [sub_resource type="Resource" id="Resource_m6abw"]
 script = ExtResource("9_wlc6m")
-type = 1
+alien = ExtResource("15_mmjt5")
 title = "Green Alien"
 cost = 1
 metadata/_custom_type_script = ExtResource("9_wlc6m")

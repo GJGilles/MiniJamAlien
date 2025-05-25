@@ -5,6 +5,13 @@ class_name AlienData
 const FOOD_WANT_TIMEOUT: float = 5
 const ACTIVITY_WANT_TIMEOUT: float = 10
 
+var is_unlocked: bool = false:
+	get:
+		return is_unlocked
+	set(value):
+		is_unlocked = value
+		on_update.emit()
+
 var happiness: int:
 	get:
 		return happiness

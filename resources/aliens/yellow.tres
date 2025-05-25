@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="AlienYellowData" load_steps=2 format=3 uid="uid://wodt1svfrbp0"]
+
+[ext_resource type="Script" uid="uid://c3aebtfg8qqsr" path="res://data/alien/alien_yellow_data.gd" id="1_hqc7g"]
+
+[resource]
+script = ExtResource("1_hqc7g")
+metadata/_custom_type_script = ExtResource("1_hqc7g")

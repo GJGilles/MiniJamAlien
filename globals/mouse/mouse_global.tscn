@@ -13,6 +13,7 @@ script = ExtResource("1_1umih")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 
 [node name="AlienScene" parent="." instance=ExtResource("2_eh284")]
+scale = Vector2(0.35, 0.35)
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_mask = 7

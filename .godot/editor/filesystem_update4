@@ -24,3 +24,5 @@ res://scenes/game_scene/activity/activity_scene.gd
 res://scenes/game_scene/activity/spin/spin_scene.gd
 res://scenes/game_scene/activity/spray/spray_scene.tscn
 res://scenes/game_scene/activity/spray/spray_scene.gd
+res://scenes/game_scene/money/money_scene.tscn
+res://scenes/game_scene/money/money_scene.gd

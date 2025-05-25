@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://c2hsf3qakqox7"]
+[gd_scene load_steps=9 format=3 uid="uid://c2hsf3qakqox7"]
 
 [ext_resource type="Script" uid="uid://blcj8n2mna7xf" path="res://scenes/game_scene/alien/alien_scene.gd" id="1_r5wbw"]
 [ext_resource type="Texture2D" uid="uid://li7pfiik3t5e" path="res://assets/alien/blue.png" id="2_qwp8p"]
 [ext_resource type="Texture2D" uid="uid://botephdkf4fbj" path="res://assets/ui/thought.png" id="3_qwp8p"]
+[ext_resource type="Texture2D" uid="uid://dg4tx6p0yaitx" path="res://assets/happiness/2.png" id="5_gnk5l"]
 [ext_resource type="Texture2D" uid="uid://3yg0c8rqcvho" path="res://assets/food/green.png" id="5_v4ckg"]
 
 [sub_resource type="Animation" id="Animation_v4ckg"]
@@ -109,20 +110,10 @@ position = Vector2(0, -54)
 rotation = -0.0872665
 texture = ExtResource("5_v4ckg")
 
-[node name="ProgressBar" type="ProgressBar" parent="."]
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -125.0
-offset_top = 175.0
-offset_right = 125.0
-offset_bottom = 195.0
-grow_horizontal = 2
-grow_vertical = 0
-step = 1.0
-value = 40.0
-show_percentage = false
+[node name="Happiness" type="Sprite2D" parent="."]
+position = Vector2(0, 250)
+scale = Vector2(1.01773, 1.01773)
+texture = ExtResource("5_gnk5l")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

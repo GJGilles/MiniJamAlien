@@ -1,24 +1,82 @@
-[gd_scene load_steps=13 format=3 uid="uid://dov0rwj03vh4o"]
+[gd_scene load_steps=15 format=3 uid="uid://dov0rwj03vh4o"]
 
+[ext_resource type="Texture2D" uid="uid://bdeb4kcru51ci" path="res://assets/ui/BG.png" id="1_jytbd"]
 [ext_resource type="PackedScene" uid="uid://bnuoq47r4b8ue" path="res://scenes/game_scene/room/room_scene.tscn" id="1_pwder"]
 [ext_resource type="PackedScene" uid="uid://wf7kp2sossa1" path="res://scenes/game_scene/food/food_scene.tscn" id="2_72663"]
 [ext_resource type="Resource" uid="uid://mw7drbrjvyv1" path="res://resources/rooms/room_1.tres" id="2_hqmgi"]
 [ext_resource type="Resource" uid="uid://bgyu0o2cut54n" path="res://resources/rooms/room_2.tres" id="3_3di6p"]
 [ext_resource type="PackedScene" uid="uid://cbrxpudjvhjs" path="res://scenes/game_scene/tool/tool_scene.tscn" id="3_o81xq"]
+[ext_resource type="Script" uid="uid://b3ofskhey2tmk" path="res://scenes/game_scene/money/money_scene.gd" id="4_iprv4"]
 [ext_resource type="Resource" uid="uid://c1q8th1d7hmme" path="res://resources/rooms/room_3.tres" id="4_jytbd"]
 [ext_resource type="PackedScene" uid="uid://brwv2x0e5ovtx" path="res://scenes/game_scene/shop/shop_scene.tscn" id="4_xb203"]
 [ext_resource type="Resource" uid="uid://bu2ucoslq8l8u" path="res://resources/rooms/room_4.tres" id="5_iprv4"]
 [ext_resource type="Resource" uid="uid://bxjljpb6nj7f3" path="res://resources/rooms/room_5.tres" id="6_1ypwy"]
 [ext_resource type="Resource" uid="uid://bp61s61gunlpj" path="res://resources/rooms/room_6.tres" id="7_hunbn"]
 [ext_resource type="Resource" uid="uid://djfbakmj27k86" path="res://resources/rooms/room_7.tres" id="8_7aaem"]
-[ext_resource type="PackedScene" uid="uid://d13qljdbd3ba2" path="res://scenes/game_scene/money/money_scene.tscn" id="12_3di6p"]
+[ext_resource type="PackedScene" uid="uid://dx6tp754oobrg" path="res://scenes/game_scene/activity/spin/spin_scene.tscn" id="14_iprv4"]
 
 [node name="GameScene" type="Node2D"]
 
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.3, 0.3)
+[node name="Behind" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="Background" type="TextureRect" parent="Behind"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_jytbd")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="FoodBlue" parent="UI" instance=ExtResource("2_72663")]
+offset_left = -689.0
+offset_top = 704.0
+offset_right = -689.0
+offset_bottom = 704.0
+food = 2
+
+[node name="FoodGreen" parent="UI" instance=ExtResource("2_72663")]
+offset_left = -119.0
+offset_top = 690.0
+offset_right = -119.0
+offset_bottom = 690.0
+
+[node name="FoodPurple" parent="UI" instance=ExtResource("2_72663")]
+offset_left = 506.0
+offset_top = 695.0
+offset_right = 506.0
+offset_bottom = 695.0
+food = 3
+
+[node name="SuckTool" parent="UI" instance=ExtResource("3_o81xq")]
+visible = false
+offset_left = -1219.0
+offset_top = 766.0
+offset_right = -1219.0
+offset_bottom = 766.0
+mode = 1
+
+[node name="CarryTool" parent="UI" instance=ExtResource("3_o81xq")]
+visible = false
+offset_left = -1530.0
+offset_top = 767.0
+offset_right = -1530.0
+offset_bottom = 767.0
+
+[node name="Label" type="Label" parent="UI"]
+offset_right = 40.0
+offset_bottom = 23.0
+script = ExtResource("4_iprv4")
+
+[node name="ShopScene" parent="." instance=ExtResource("4_xb203")]
 
 [node name="Rooms" type="Node2D" parent="."]
+position = Vector2(600, 300)
+scale = Vector2(0.35, 0.35)
 
 [node name="RoomScene1" parent="Rooms" instance=ExtResource("1_pwder")]
 data = ExtResource("2_hqmgi")
@@ -47,41 +105,19 @@ data = ExtResource("7_hunbn")
 position = Vector2(560, 0)
 data = ExtResource("8_7aaem")
 
-[node name="FoodBlue" parent="." instance=ExtResource("2_72663")]
-offset_left = -689.0
-offset_top = 704.0
-offset_right = -689.0
-offset_bottom = 704.0
-food = 2
-
-[node name="FoodGreen" parent="." instance=ExtResource("2_72663")]
-offset_left = -119.0
-offset_top = 690.0
-offset_right = -119.0
-offset_bottom = 690.0
-
-[node name="FoodPurple" parent="." instance=ExtResource("2_72663")]
-offset_left = 506.0
-offset_top = 695.0
-offset_right = 506.0
-offset_bottom = 695.0
-food = 3
-
-[node name="CarryTool" parent="." instance=ExtResource("3_o81xq")]
+[node name="Minigames" type="CanvasLayer" parent="."]
 visible = false
-offset_left = -1530.0
-offset_top = 767.0
-offset_right = -1530.0
-offset_bottom = 767.0
 
-[node name="SuckTool" parent="." instance=ExtResource("3_o81xq")]
-visible = false
-offset_left = -1219.0
-offset_top = 766.0
-offset_right = -1219.0
-offset_bottom = 766.0
-mode = 1
+[node name="Backdrop" type="ColorRect" parent="Minigames"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.176471, 0.176471, 0.176471, 0.498039)
 
-[node name="ShopScene" parent="." instance=ExtResource("4_xb203")]
+[node name="Games" type="Node2D" parent="Minigames"]
+position = Vector2(600, 300)
+scale = Vector2(0.8, 0.8)
 
-[node name="MoneyScene" parent="." instance=ExtResource("12_3di6p")]
+[node name="SpinScene" parent="Minigames/Games" instance=ExtResource("14_iprv4")]
