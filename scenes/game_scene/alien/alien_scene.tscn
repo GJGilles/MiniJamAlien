@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://c2hsf3qakqox7"]
+[gd_scene load_steps=10 format=3 uid="uid://c2hsf3qakqox7"]
 
 [ext_resource type="Script" uid="uid://blcj8n2mna7xf" path="res://scenes/game_scene/alien/alien_scene.gd" id="1_r5wbw"]
 [ext_resource type="Texture2D" uid="uid://li7pfiik3t5e" path="res://assets/alien/blue.png" id="2_qwp8p"]
 [ext_resource type="Texture2D" uid="uid://botephdkf4fbj" path="res://assets/ui/thought.png" id="3_qwp8p"]
 [ext_resource type="Texture2D" uid="uid://dg4tx6p0yaitx" path="res://assets/happiness/2.png" id="5_gnk5l"]
 [ext_resource type="Texture2D" uid="uid://3yg0c8rqcvho" path="res://assets/food/green.png" id="5_v4ckg"]
+[ext_resource type="Texture2D" uid="uid://cnka18mna2v6a" path="res://assets/happiness/4.png" id="6_gnk5l"]
 
 [sub_resource type="Animation" id="Animation_v4ckg"]
 length = 0.001
@@ -93,6 +94,7 @@ _data = {
 }
 
 [node name="AlienScene" type="Node2D"]
+scale = Vector2(0.7, 0.7)
 script = ExtResource("1_r5wbw")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -100,8 +102,9 @@ texture = ExtResource("2_qwp8p")
 
 [node name="Thought" type="Sprite2D" parent="."]
 visible = false
+modulate = Color(1, 1, 1, 0.784314)
 z_index = 1
-position = Vector2(100, -200)
+position = Vector2(188, -183)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_qwp8p")
 
@@ -111,7 +114,7 @@ rotation = -0.0872665
 texture = ExtResource("5_v4ckg")
 
 [node name="Happiness" type="Sprite2D" parent="."]
-position = Vector2(0, 250)
+position = Vector2(-7, -235)
 scale = Vector2(1.01773, 1.01773)
 texture = ExtResource("5_gnk5l")
 
@@ -120,3 +123,16 @@ libraries = {
 &"": SubResource("AnimationLibrary_gnk5l")
 }
 autoplay = "idle"
+
+[node name="Particles" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 5
+local_coords = true
+texture = ExtResource("6_gnk5l")
+emission_shape = 1
+emission_sphere_radius = 1.0
+direction = Vector2(0, -1)
+spread = 90.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 250.0
+initial_velocity_max = 300.0

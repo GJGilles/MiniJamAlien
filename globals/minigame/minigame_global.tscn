@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://b5xpoaeam7p8v"]
+
+[ext_resource type="PackedScene" uid="uid://dx6tp754oobrg" path="res://scenes/game_scene/activity/spin/spin_scene.tscn" id="1_0kcfy"]
+[ext_resource type="Script" uid="uid://2aqipb2mimhs" path="res://globals/minigame/minigame_global.gd" id="1_fefg8"]
+[ext_resource type="PackedScene" uid="uid://bcunmbtjin7dc" path="res://scenes/game_scene/activity/spray/spray_scene.tscn" id="3_yfe2x"]
+
+[node name="Minigame_Global" type="CanvasLayer"]
+visible = false
+script = ExtResource("1_fefg8")
+
+[node name="Backdrop" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.176471, 0.176471, 0.176471, 0.498039)
+
+[node name="Games" type="Node2D" parent="."]
+position = Vector2(600, 300)
+scale = Vector2(0.8, 0.8)
+
+[node name="SpinScene" parent="Games" instance=ExtResource("1_0kcfy")]
+visible = false
+
+[node name="SprayScene" parent="Games" instance=ExtResource("3_yfe2x")]
+visible = false

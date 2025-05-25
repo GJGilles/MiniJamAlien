@@ -74,16 +74,16 @@ func get_item_texture(activity: ACTIVITY_TYPE) -> Texture2D:
 		ACTIVITY_TYPE.SPIN:
 			return load("res://assets/item/spin.png")
 		_:
-			return load("res://assets/room/none.png")
+			return null
 
 func get_room_texture(activity: ACTIVITY_TYPE) -> Texture2D:
 	match activity:
 		ACTIVITY_TYPE.SPRAY:
-			return load("res://assets/room/poke.png")
+			return load("res://assets/room/spray.png")
 		ACTIVITY_TYPE.POKE:
 			return load("res://assets/room/poke.png")
 		ACTIVITY_TYPE.SPIN:
-			return load("res://assets/room/poke.png")
+			return load("res://assets/room/spin.png")
 		_:
 			return load("res://assets/room/none.png")
 

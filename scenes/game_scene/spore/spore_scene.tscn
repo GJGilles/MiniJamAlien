@@ -6,9 +6,9 @@
 radius = 60.0
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5gdcq"]
-load_path = "res://.godot/imported/spore.png-6a594b6ab9d4b33447f4ba61b3b92d84.ctex"
 
 [node name="SporeScene" type="RigidBody2D"]
+scale = Vector2(0.2, 0.2)
 collision_layer = 4
 collision_mask = 2
 mass = 0.1

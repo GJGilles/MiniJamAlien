@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://bcunmbtjin7dc"]
+[gd_scene load_steps=8 format=3 uid="uid://bcunmbtjin7dc"]
 
 [ext_resource type="Script" uid="uid://cijgjvk73wx0q" path="res://scenes/game_scene/activity/spray/spray_scene.gd" id="1_r6wo5"]
 [ext_resource type="Texture2D" uid="uid://b1rwvx87egy0s" path="res://assets/room/spray_active.png" id="2_hbeo6"]
 [ext_resource type="Texture2D" uid="uid://ds8ddralnynut" path="res://assets/alien/yellow.png" id="3_bd5mg"]
+[ext_resource type="Texture2D" uid="uid://da1v553w00tl7" path="res://assets/spray/Laser.png" id="3_k061k"]
 [ext_resource type="Texture2D" uid="uid://d0waahgvrdtrh" path="res://assets/spray/clump_1.png" id="4_k061k"]
 [ext_resource type="Texture2D" uid="uid://bkl3deml7hegn" path="res://assets/spray/clump_2.png" id="5_o6la8"]
 [ext_resource type="Texture2D" uid="uid://cfb1pairk8m36" path="res://assets/spray/clump_3.png" id="6_x437l"]
@@ -13,22 +14,57 @@ script = ExtResource("1_r6wo5")
 [node name="Background" type="Sprite2D" parent="."]
 texture = ExtResource("2_hbeo6")
 
+[node name="Lasers" type="Node2D" parent="."]
+
+[node name="Laser0" type="Sprite2D" parent="Lasers"]
+visible = false
+position = Vector2(-111.473, -121.887)
+rotation = -0.628319
+scale = Vector2(0.7, 0.457504)
+texture = ExtResource("3_k061k")
+
+[node name="Laser1" type="Sprite2D" parent="Lasers"]
+visible = false
+position = Vector2(114.493, -119.561)
+rotation = 0.610865
+scale = Vector2(0.7, 0.464943)
+texture = ExtResource("3_k061k")
+
+[node name="Laser2" type="Sprite2D" parent="Lasers"]
+visible = false
+position = Vector2(114.565, 107.782)
+rotation = -3.66519
+scale = Vector2(0.7, 0.539282)
+texture = ExtResource("3_k061k")
+
+[node name="Laser3" type="Sprite2D" parent="Lasers"]
+visible = false
+position = Vector2(-110, 113)
+rotation = -2.61799
+scale = Vector2(0.7, 0.5)
+texture = ExtResource("3_k061k")
+
 [node name="Alien" type="Sprite2D" parent="."]
+scale = Vector2(0.7, 0.7)
 texture = ExtResource("3_bd5mg")
 
 [node name="Clump0" type="Sprite2D" parent="Alien"]
+visible = false
 position = Vector2(-80, -85)
 texture = ExtResource("4_k061k")
 
 [node name="Clump1" type="Sprite2D" parent="Alien"]
+visible = false
 position = Vector2(81, -97)
 texture = ExtResource("5_o6la8")
 
 [node name="Clump2" type="Sprite2D" parent="Alien"]
+visible = false
 position = Vector2(87, 64)
 texture = ExtResource("4_k061k")
 
 [node name="Clump3" type="Sprite2D" parent="Alien"]
+visible = false
 position = Vector2(-81, 62)
 texture = ExtResource("6_x437l")
 
@@ -64,7 +100,13 @@ offset_top = 263.0
 offset_right = -197.0
 offset_bottom = 344.0
 
-[connection signal="pressed" from="Control/Button0" to="." method="clean" binds= [0]]
-[connection signal="pressed" from="Control/Button1" to="." method="clean" binds= [1]]
-[connection signal="pressed" from="Control/Button2" to="." method="clean" binds= [2]]
-[connection signal="pressed" from="Control/Button3" to="." method="clean" binds= [3]]
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[connection signal="button_down" from="Control/Button0" to="." method="_button_down" binds= [0]]
+[connection signal="button_up" from="Control/Button0" to="." method="_button_up" binds= [0]]
+[connection signal="button_down" from="Control/Button1" to="." method="_button_down" binds= [1]]
+[connection signal="button_up" from="Control/Button1" to="." method="_button_up" binds= [1]]
+[connection signal="button_down" from="Control/Button2" to="." method="_button_down" binds= [2]]
+[connection signal="button_up" from="Control/Button2" to="." method="_button_up" binds= [2]]
+[connection signal="button_down" from="Control/Button3" to="." method="_button_down" binds= [3]]
+[connection signal="button_up" from="Control/Button3" to="." method="_button_up" binds= [3]]

@@ -15,7 +15,7 @@ func get_food_wants() -> Dictionary[GAME.FOOD_TYPE, int]:
 
 func get_activity_wants() -> Dictionary[GAME.ACTIVITY_TYPE, int]:
 	return {
-		GAME.ACTIVITY_TYPE.SPRAY: 20
+		GAME.ACTIVITY_TYPE.SPIN: 20
 	}
 
 func get_food_cooldown() -> float:

@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://bnuoq47r4b8ue"]
+[gd_scene load_steps=8 format=3 uid="uid://bnuoq47r4b8ue"]
 
 [ext_resource type="Script" uid="uid://bbepqc66pp85j" path="res://scenes/game_scene/room/room_scene.gd" id="1_2nqp8"]
 [ext_resource type="Texture2D" uid="uid://dt8mgttahg2u2" path="res://assets/room/none.png" id="1_opyto"]
 [ext_resource type="PackedScene" uid="uid://c2hsf3qakqox7" path="res://scenes/game_scene/alien/alien_scene.tscn" id="2_2nqp8"]
+[ext_resource type="Texture2D" uid="uid://k5xic6v74l0v" path="res://assets/item/spin.png" id="3_cnfgd"]
 [ext_resource type="Script" uid="uid://b1bglf0bnoo2t" path="res://addons/donut_collision_polygon2D/donut_collision_polygon2D.gd" id="4_lmom5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_opyto"]
@@ -18,7 +19,14 @@ script = ExtResource("1_2nqp8")
 [node name="Background" type="Sprite2D" parent="."]
 texture = ExtResource("1_opyto")
 
+[node name="Item" type="Sprite2D" parent="Background"]
+z_index = 1
+position = Vector2(-7.62939e-06, 206)
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("3_cnfgd")
+
 [node name="AlienScene" parent="." instance=ExtResource("2_2nqp8")]
+scale = Vector2(0.7, 0.7)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_opyto")
@@ -36,3 +44,4 @@ width = 10.0
 metadata/_custom_type_script = ExtResource("4_lmom5")
 
 [node name="Spores" type="Node2D" parent="."]
+scale = Vector2(0.2, 0.2)

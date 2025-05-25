@@ -8,7 +8,6 @@ const LINEAR_SPEED_SCALE: float = 20
 const TOTAL_SPIN_TIME: float = 3
 const SPIN_TIMEOUT: float = 0.5
 
-@onready var alien: Sprite2D = $Alien
 @onready var button_back: Sprite2D = $ButtonBack
 
 var speed: float = 0

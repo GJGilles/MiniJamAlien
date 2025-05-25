@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://brwv2x0e5ovtx"]
+[gd_scene load_steps=32 format=3 uid="uid://brwv2x0e5ovtx"]
 
 [ext_resource type="PackedScene" uid="uid://7a7kpmnv4514" path="res://scenes/game_scene/shop/item/shop_item_scene.tscn" id="1_roqrc"]
 [ext_resource type="Script" uid="uid://bmk736v16lttw" path="res://data/shop/shop_upgrade_data.gd" id="2_3a8af"]
@@ -109,9 +109,18 @@ metadata/_custom_type_script = ExtResource("9_wlc6m")
 
 [sub_resource type="Resource" id="Resource_m1llw"]
 script = ExtResource("10_4x80t")
-type = 2
+type = 3
 room = ExtResource("11_003jr")
-title = "Poking Room"
+title = "Spin Room"
+cost = 1
+metadata/_custom_type_script = ExtResource("10_4x80t")
+
+[sub_resource type="Resource" id="Resource_llbf4"]
+script = ExtResource("10_4x80t")
+type = 3
+room = ExtResource("5_wpbuu")
+prev = ExtResource("11_003jr")
+title = "Spin Room"
 cost = 1
 metadata/_custom_type_script = ExtResource("10_4x80t")
 
@@ -178,6 +187,10 @@ data = SubResource("Resource_eg3xt")
 layout_mode = 2
 data = SubResource("Resource_m6abw")
 
-[node name="Poke" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_roqrc")]
+[node name="Spin1" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_roqrc")]
 layout_mode = 2
 data = SubResource("Resource_m1llw")
+
+[node name="Spin2" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_roqrc")]
+layout_mode = 2
+data = SubResource("Resource_llbf4")

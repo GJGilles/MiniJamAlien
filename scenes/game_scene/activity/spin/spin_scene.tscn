@@ -14,6 +14,7 @@ script = ExtResource("1_wixyo")
 texture = ExtResource("2_wixyo")
 
 [node name="Alien" type="Sprite2D" parent="."]
+scale = Vector2(0.7, 0.7)
 texture = ExtResource("3_wixyo")
 
 [node name="ButtonBack" type="Sprite2D" parent="."]

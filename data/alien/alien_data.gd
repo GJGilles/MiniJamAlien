@@ -16,6 +16,9 @@ var happiness: int:
 	get:
 		return happiness
 	set(value):
+		if value > happiness:
+			on_happy.emit()
+		
 		happiness = clamp(value, 0, 100)
 		on_update.emit()
 
@@ -68,6 +71,7 @@ var time_activity_want: float:
 			time_activity_want = value
 
 signal on_update()
+signal on_happy()
 
 func _init():
 	happiness = 20
