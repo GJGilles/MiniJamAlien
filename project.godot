@@ -29,7 +29,7 @@ window/size/resizable=false
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/donut_collision_polygon2D/plugin.cfg", "res://addons/maaacks_game_template/plugin.cfg")
+enabled=PackedStringArray("res://addons/donut_collision_polygon2D/plugin.cfg")
 
 [gui]
 

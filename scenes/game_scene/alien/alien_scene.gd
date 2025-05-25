@@ -37,7 +37,7 @@ func _physics_process(delta: float) -> void:
 		return
 	
 	data.time_food_want += delta
-	#data.time_activity_want += delta
+	data.time_activity_want += delta
 
 func on_update():
 	progress_bar.value = data.happiness

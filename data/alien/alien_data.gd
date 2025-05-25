@@ -32,8 +32,7 @@ var time_food_want: float:
 	set(value):
 		if curr_food_want != GAME.FOOD_TYPE.NONE:
 			if value > FOOD_WANT_TIMEOUT:
-				happiness -= get_food_wants()[curr_food_want]
-				curr_food_want = GAME.FOOD_TYPE.NONE
+				happiness -= get_food_wants()[curr_food_want] / 2
 				time_food_want = 0
 			else:
 				time_food_want = value
@@ -50,8 +49,7 @@ var time_activity_want: float:
 	set(value):
 		if curr_activity_want != GAME.ACTIVITY_TYPE.NONE:
 			if value > ACTIVITY_WANT_TIMEOUT:
-				happiness -= get_activity_wants()[curr_activity_want]
-				curr_activity_want = GAME.ACTIVITY_TYPE.NONE
+				happiness -= get_activity_wants()[curr_activity_want] / 2
 				time_activity_want = 0
 			else:
 				time_activity_want = value

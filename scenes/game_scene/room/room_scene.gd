@@ -22,6 +22,7 @@ var is_ready: bool = false
 
 func _ready() -> void:
 	is_ready = true
+	alien_movement()
 
 func on_update():
 	if !is_ready:
@@ -30,6 +31,11 @@ func on_update():
 	visible = data.is_unlocked
 	background.texture = GAME.get_room_texture(data.get_activity_type())
 	alien_scene.data = data.alien
+
+func alien_movement():
+	var tween = create_tween()
+	tween.tween_property(alien_scene, "position", Vector2(randi_range(-100, 100), randi_range(-150, 100)), 3.0)
+	tween.finished.connect(alien_movement, CONNECT_ONE_SHOT)
 
 func deposit(carry: CarryData, from: RoomScene):
 	if carry is CarryFoodData:

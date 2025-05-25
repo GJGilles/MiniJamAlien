@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://k5xic6v74l0v"
-path="res://.godot/imported/spin.png-482230f47ce3b68d08314bff99bfa54e.ctex"
+uid="uid://lcehp7oi7atj"
+path="res://.godot/imported/poke.png-7e9845411a55faadc7b5820880edd93f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/room/spin.png"
-dest_files=["res://.godot/imported/spin.png-482230f47ce3b68d08314bff99bfa54e.ctex"]
+source_file="res://assets/item/poke.png"
+dest_files=["res://.godot/imported/poke.png-7e9845411a55faadc7b5820880edd93f.ctex"]
 
 [params]
 

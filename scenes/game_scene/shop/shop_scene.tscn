@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://brwv2x0e5ovtx"]
+[gd_scene load_steps=25 format=3 uid="uid://brwv2x0e5ovtx"]
 
 [ext_resource type="PackedScene" uid="uid://7a7kpmnv4514" path="res://scenes/game_scene/shop/item/shop_item_scene.tscn" id="1_roqrc"]
 [ext_resource type="Script" uid="uid://bmk736v16lttw" path="res://data/shop/shop_upgrade_data.gd" id="2_3a8af"]
@@ -9,6 +9,8 @@
 [ext_resource type="Resource" uid="uid://bp61s61gunlpj" path="res://resources/rooms/room_6.tres" id="7_prqai"]
 [ext_resource type="Resource" uid="uid://djfbakmj27k86" path="res://resources/rooms/room_7.tres" id="8_87e7f"]
 [ext_resource type="Script" uid="uid://c7e73f38gp4r3" path="res://data/shop/shop_alien_data.gd" id="9_wlc6m"]
+[ext_resource type="Script" uid="uid://d1ilmwbkrl10a" path="res://data/shop/shop_facility_data.gd" id="10_4x80t"]
+[ext_resource type="Resource" uid="uid://mw7drbrjvyv1" path="res://resources/rooms/room_1.tres" id="11_003jr"]
 
 [sub_resource type="Resource" id="Resource_wpbuu"]
 script = ExtResource("2_3a8af")
@@ -99,6 +101,14 @@ title = "Green Alien"
 cost = 1
 metadata/_custom_type_script = ExtResource("9_wlc6m")
 
+[sub_resource type="Resource" id="Resource_m1llw"]
+script = ExtResource("10_4x80t")
+type = 2
+room = ExtResource("11_003jr")
+title = "Poking Room"
+cost = 1
+metadata/_custom_type_script = ExtResource("10_4x80t")
+
 [node name="ShopScene" type="CanvasLayer"]
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
@@ -161,3 +171,7 @@ data = SubResource("Resource_eg3xt")
 [node name="Green" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_roqrc")]
 layout_mode = 2
 data = SubResource("Resource_m6abw")
+
+[node name="Poke" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_roqrc")]
+layout_mode = 2
+data = SubResource("Resource_m1llw")

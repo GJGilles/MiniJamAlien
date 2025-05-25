@@ -65,8 +65,25 @@ func get_food_texture(food: FOOD_TYPE) -> Texture2D:
 		_:
 			return null
 
+func get_item_texture(activity: ACTIVITY_TYPE) -> Texture2D:
+	match activity:
+		ACTIVITY_TYPE.SPRAY:
+			return load("res://assets/item/spray.png")
+		ACTIVITY_TYPE.POKE:
+			return load("res://assets/item/poke.png")
+		ACTIVITY_TYPE.SPIN:
+			return load("res://assets/item/spin.png")
+		_:
+			return load("res://assets/room/none.png")
+
 func get_room_texture(activity: ACTIVITY_TYPE) -> Texture2D:
 	match activity:
+		ACTIVITY_TYPE.SPRAY:
+			return load("res://assets/room/poke.png")
+		ACTIVITY_TYPE.POKE:
+			return load("res://assets/room/poke.png")
+		ACTIVITY_TYPE.SPIN:
+			return load("res://assets/room/poke.png")
 		_:
 			return load("res://assets/room/none.png")
 

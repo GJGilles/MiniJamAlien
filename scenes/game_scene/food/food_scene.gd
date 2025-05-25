@@ -8,4 +8,4 @@ func _ready() -> void:
 	texture_rect.texture = GAME.get_food_texture(food)
 
 func _button_down() -> void:
-	MOUSE.curr_carry = MOUSE.CarryFoodData.create(GAME.get_food_texture(food), food)
+	MOUSE.curr_carry = CarryFoodData.create(food)
