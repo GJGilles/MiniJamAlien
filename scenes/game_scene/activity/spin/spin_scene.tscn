@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://dx6tp754oobrg"]
+
+[ext_resource type="Script" uid="uid://dmcxl7txcdd0o" path="res://scenes/game_scene/activity/spin/spin_scene.gd" id="1_wixyo"]
+[ext_resource type="Texture2D" uid="uid://bd4ef2fu6us8u" path="res://assets/room/spin.png" id="2_wixyo"]
+[ext_resource type="Texture2D" uid="uid://cuh3ux8b683uj" path="res://assets/alien/green.png" id="3_wixyo"]
+
+[node name="SpinScene" type="Node2D"]
+script = ExtResource("1_wixyo")
+
+[node name="Background" type="Sprite2D" parent="."]
+texture = ExtResource("2_wixyo")
+
+[node name="Alien" type="Sprite2D" parent="."]
+texture = ExtResource("3_wixyo")
+
+[node name="Button" type="Button" parent="."]
+offset_left = -20.0
+offset_top = 189.0
+offset_right = 20.0
+offset_bottom = 229.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

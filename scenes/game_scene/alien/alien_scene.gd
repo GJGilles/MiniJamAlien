@@ -5,8 +5,8 @@ class_name AlienScene
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var progress_bar: ProgressBar = $ProgressBar
 
-@onready var thought: TextureRect = $Thought
-@onready var want: TextureRect = $Thought/Want
+@onready var thought: Sprite2D = $Thought
+@onready var want: Sprite2D = $Thought/Want
 
 var data: AlienData:
 	get: 

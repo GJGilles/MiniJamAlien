@@ -34,7 +34,7 @@ func on_update():
 
 func alien_movement():
 	var tween = create_tween()
-	tween.tween_property(alien_scene, "position", Vector2(randi_range(-100, 100), randi_range(-150, 100)), 3.0)
+	tween.tween_property(alien_scene, "position", Vector2(randi_range(-50, 50), randi_range(-50, 50)), 3.0)
 	tween.finished.connect(alien_movement, CONNECT_ONE_SHOT)
 
 func deposit(carry: CarryData, from: RoomScene):
