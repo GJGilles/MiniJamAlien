@@ -15,3 +15,9 @@ res://data/alien/alien_data.gd
 res://scenes/game_scene/spore/spore_scene.tscn
 res://shaders/wobble.gdshader
 res://scenes/game_scene/activity/spray/spray_scene.gd
+res://scenes/game_scene/food/food_scene.tscn
+res://globals/mouse/mouse_global.tscn
+res://globals/mouse/mouse_global.gd
+res://scenes/game_scene/tool/tool_scene.tscn
+res://scenes/game_scene/tool/tool_scene.gd
+res://data/room_data.gd

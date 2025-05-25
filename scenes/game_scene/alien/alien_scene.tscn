@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://botephdkf4fbj" path="res://assets/ui/thought.png" id="3_qwp8p"]
 [ext_resource type="Texture2D" uid="uid://dg4tx6p0yaitx" path="res://assets/happiness/2.png" id="5_gnk5l"]
 [ext_resource type="Texture2D" uid="uid://3yg0c8rqcvho" path="res://assets/food/green.png" id="5_v4ckg"]
-[ext_resource type="Texture2D" uid="uid://cnka18mna2v6a" path="res://assets/happiness/4.png" id="6_gnk5l"]
+[ext_resource type="Texture2D" uid="uid://7n12iedtgyuf" path="res://assets/happiness/heart.png" id="6_gnk5l"]
 
 [sub_resource type="Animation" id="Animation_v4ckg"]
 length = 0.001

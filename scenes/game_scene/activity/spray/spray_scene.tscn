@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bcunmbtjin7dc"]
+[gd_scene load_steps=10 format=3 uid="uid://bcunmbtjin7dc"]
 
 [ext_resource type="Script" uid="uid://cijgjvk73wx0q" path="res://scenes/game_scene/activity/spray/spray_scene.gd" id="1_r6wo5"]
 [ext_resource type="Texture2D" uid="uid://b1rwvx87egy0s" path="res://assets/room/spray_active.png" id="2_hbeo6"]
@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://d0waahgvrdtrh" path="res://assets/spray/clump_1.png" id="4_k061k"]
 [ext_resource type="Texture2D" uid="uid://bkl3deml7hegn" path="res://assets/spray/clump_2.png" id="5_o6la8"]
 [ext_resource type="Texture2D" uid="uid://cfb1pairk8m36" path="res://assets/spray/clump_3.png" id="6_x437l"]
+[ext_resource type="Texture2D" uid="uid://cgdgd7th87bee" path="res://assets/spray/butt_up.png" id="8_x437l"]
+[ext_resource type="Texture2D" uid="uid://bbunrdwtsekaw" path="res://assets/spray/butt_down.png" id="9_00s5u"]
 
 [node name="SprayScene" type="Node2D"]
 script = ExtResource("1_r6wo5")
@@ -64,7 +66,6 @@ position = Vector2(87, 64)
 texture = ExtResource("4_k061k")
 
 [node name="Clump3" type="Sprite2D" parent="Alien"]
-visible = false
 position = Vector2(-81, 62)
 texture = ExtResource("6_x437l")
 
@@ -72,33 +73,42 @@ texture = ExtResource("6_x437l")
 layout_mode = 3
 anchors_preset = 0
 
-[node name="Button0" type="Button" parent="Control"]
+[node name="Button0" type="TextureButton" parent="Control"]
 layout_mode = 0
-offset_left = -235.0
-offset_top = -320.0
-offset_right = -149.0
-offset_bottom = -239.0
+offset_left = -210.0
+offset_top = -280.0
+offset_right = -122.0
+offset_bottom = -199.0
+texture_normal = ExtResource("8_x437l")
+texture_pressed = ExtResource("9_00s5u")
+stretch_mode = 3
 
-[node name="Button1" type="Button" parent="Control"]
+[node name="Button1" type="TextureButton" parent="Control"]
 layout_mode = 0
-offset_left = 167.0
-offset_top = -322.0
-offset_right = 253.0
-offset_bottom = -241.0
+offset_left = 120.0
+offset_top = -280.0
+offset_right = 208.0
+offset_bottom = -199.0
+texture_normal = ExtResource("8_x437l")
+texture_pressed = ExtResource("9_00s5u")
 
-[node name="Button2" type="Button" parent="Control"]
+[node name="Button2" type="TextureButton" parent="Control"]
 layout_mode = 0
-offset_left = 185.0
-offset_top = 245.0
-offset_right = 271.0
-offset_bottom = 326.0
+offset_left = 120.0
+offset_top = 170.0
+offset_right = 208.0
+offset_bottom = 251.0
+texture_normal = ExtResource("8_x437l")
+texture_pressed = ExtResource("9_00s5u")
 
-[node name="Button3" type="Button" parent="Control"]
+[node name="Button3" type="TextureButton" parent="Control"]
 layout_mode = 0
-offset_left = -283.0
-offset_top = 263.0
-offset_right = -197.0
-offset_bottom = 344.0
+offset_left = -210.0
+offset_top = 170.0
+offset_right = -122.0
+offset_bottom = 251.0
+texture_normal = ExtResource("8_x437l")
+texture_pressed = ExtResource("9_00s5u")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://xdg3dojinin7"
-path="res://.godot/imported/Action Pet.png-f36da4d7eade3104f9f756c8dc7f274e.ctex"
+uid="uid://blch31tj8k2kj"
+path="res://.godot/imported/suck_on.png-c1f7788dfbaf6694621e83b83d2f8136.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/mouse/Action Pet.png"
-dest_files=["res://.godot/imported/Action Pet.png-f36da4d7eade3104f9f756c8dc7f274e.ctex"]
+source_file="res://assets/mouse/suck_on.png"
+dest_files=["res://.godot/imported/suck_on.png-c1f7788dfbaf6694621e83b83d2f8136.ctex"]
 
 [params]
 

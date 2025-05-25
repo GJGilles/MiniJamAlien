@@ -1,24 +1,36 @@
-[gd_scene load_steps=2 format=3 uid="uid://cbrxpudjvhjs"]
+[gd_scene load_steps=4 format=3 uid="uid://cbrxpudjvhjs"]
 
 [ext_resource type="Script" uid="uid://d3wnngwbby6g" path="res://scenes/game_scene/tool/tool_scene.gd" id="1_lwudn"]
+[ext_resource type="Texture2D" uid="uid://dp3vvwv41s3j7" path="res://assets/ui/tool_bg.png" id="2_jerei"]
+[ext_resource type="Texture2D" uid="uid://xdg3dojinin7" path="res://assets/mouse/pet.png" id="3_jwpg0"]
 
 [node name="ToolScene" type="Control"]
+custom_minimum_size = Vector2(100, 100)
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 0
+offset_right = 100.0
+offset_bottom = 100.0
 script = ExtResource("1_lwudn")
 
-[node name="Button" type="Button" parent="."]
+[node name="Button" type="TextureButton" parent="."]
 layout_mode = 0
 offset_right = 134.0
 offset_bottom = 98.0
+texture_normal = ExtResource("2_jerei")
+ignore_texture_size = true
+stretch_mode = 5
 
 [node name="TextureRect" type="TextureRect" parent="Button"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_jwpg0")
+expand_mode = 3
+stretch_mode = 5
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

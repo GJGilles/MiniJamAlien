@@ -1,27 +1,39 @@
-[gd_scene load_steps=3 format=3 uid="uid://wf7kp2sossa1"]
+[gd_scene load_steps=4 format=3 uid="uid://wf7kp2sossa1"]
 
 [ext_resource type="Script" uid="uid://dq54cmufbobl8" path="res://scenes/game_scene/food/food_scene.gd" id="1_qp6m4"]
 [ext_resource type="Texture2D" uid="uid://3yg0c8rqcvho" path="res://assets/food/green.png" id="1_w0dna"]
+[ext_resource type="Texture2D" uid="uid://b05db7w5hrxw4" path="res://assets/ui/food_bg.png" id="2_tnc46"]
 
 [node name="FoodScene" type="Control"]
+custom_minimum_size = Vector2(100, 100)
 layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_qp6m4")
+food = 1
+
+[node name="TextureButton" type="Button" parent="."]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_qp6m4")
-food = 1
-
-[node name="TextureButton" type="Button" parent="."]
-layout_mode = 0
-offset_right = 233.0
-offset_bottom = 191.0
+icon = ExtResource("2_tnc46")
+flat = true
+icon_alignment = 1
+expand_icon = true
 
 [node name="TextureRect" type="TextureRect" parent="TextureButton"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.2
+anchor_top = 0.2
+anchor_right = 0.8
+anchor_bottom = 0.8
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("1_w0dna")
+expand_mode = 5
+stretch_mode = 5
 
 [connection signal="button_down" from="TextureButton" to="." method="_button_down"]

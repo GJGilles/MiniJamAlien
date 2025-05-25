@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dd82qlrojk1nd"
-path="res://.godot/imported/Vacuum Off.png-5bc936841c3e6bdabf1d436221d9817c.ctex"
+path="res://.godot/imported/suck_off.png-d3dcb8483fb362000710d39e30ea29d5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/mouse/Vacuum Off.png"
-dest_files=["res://.godot/imported/Vacuum Off.png-5bc936841c3e6bdabf1d436221d9817c.ctex"]
+source_file="res://assets/mouse/suck_off.png"
+dest_files=["res://.godot/imported/suck_off.png-d3dcb8483fb362000710d39e30ea29d5.ctex"]
 
 [params]
 

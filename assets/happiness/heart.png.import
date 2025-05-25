@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://twbi7gvnk2x1"
-path="res://.godot/imported/Food Button BG.png-2407146f9c4870424b4f8b8ced92cc55.ctex"
+uid="uid://7n12iedtgyuf"
+path="res://.godot/imported/heart.png-08028642598e771651c4d5626ed752e9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ui/Food Button BG.png"
-dest_files=["res://.godot/imported/Food Button BG.png-2407146f9c4870424b4f8b8ced92cc55.ctex"]
+source_file="res://assets/happiness/heart.png"
+dest_files=["res://.godot/imported/heart.png-08028642598e771651c4d5626ed752e9.ctex"]
 
 [params]
 

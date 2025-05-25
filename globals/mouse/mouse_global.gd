@@ -3,8 +3,7 @@ extends Node2D
 enum MOUSE_MODE {
 	CARRY,
 	SUCK,
-	INTERACT,
-	SELL
+	PET,
 }
 
 @onready var sprite_2d: Sprite2D = $Sprite2D

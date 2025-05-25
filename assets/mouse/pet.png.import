@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://blch31tj8k2kj"
-path="res://.godot/imported/Vacuum On.png-e708a7db389241753b76f7d847c0b7d2.ctex"
+uid="uid://xdg3dojinin7"
+path="res://.godot/imported/pet.png-c82164c19a4539d45b5e4830f6582c3f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/mouse/Vacuum On.png"
-dest_files=["res://.godot/imported/Vacuum On.png-e708a7db389241753b76f7d847c0b7d2.ctex"]
+source_file="res://assets/mouse/pet.png"
+dest_files=["res://.godot/imported/pet.png-c82164c19a4539d45b5e4830f6582c3f.ctex"]
 
 [params]
 

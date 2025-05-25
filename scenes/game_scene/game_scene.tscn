@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dov0rwj03vh4o"]
+[gd_scene load_steps=16 format=3 uid="uid://dov0rwj03vh4o"]
 
 [ext_resource type="Texture2D" uid="uid://bdeb4kcru51ci" path="res://assets/ui/BG.png" id="1_jytbd"]
 [ext_resource type="PackedScene" uid="uid://bnuoq47r4b8ue" path="res://scenes/game_scene/room/room_scene.tscn" id="1_pwder"]
@@ -9,8 +9,10 @@
 [ext_resource type="Script" uid="uid://b3ofskhey2tmk" path="res://scenes/game_scene/money/money_scene.gd" id="4_iprv4"]
 [ext_resource type="Resource" uid="uid://c1q8th1d7hmme" path="res://resources/rooms/room_3.tres" id="4_jytbd"]
 [ext_resource type="PackedScene" uid="uid://brwv2x0e5ovtx" path="res://scenes/game_scene/shop/shop_scene.tscn" id="4_xb203"]
+[ext_resource type="Texture2D" uid="uid://blch31tj8k2kj" path="res://assets/mouse/suck_on.png" id="5_1ypwy"]
 [ext_resource type="Resource" uid="uid://bu2ucoslq8l8u" path="res://resources/rooms/room_4.tres" id="5_iprv4"]
 [ext_resource type="Resource" uid="uid://bxjljpb6nj7f3" path="res://resources/rooms/room_5.tres" id="6_1ypwy"]
+[ext_resource type="Texture2D" uid="uid://xdg3dojinin7" path="res://assets/mouse/pet.png" id="6_hunbn"]
 [ext_resource type="Resource" uid="uid://bp61s61gunlpj" path="res://resources/rooms/room_6.tres" id="7_hunbn"]
 [ext_resource type="Resource" uid="uid://djfbakmj27k86" path="res://resources/rooms/room_7.tres" id="8_7aaem"]
 
@@ -31,60 +33,49 @@ stretch_mode = 5
 
 [node name="UI" type="CanvasLayer" parent="."]
 
-[node name="Food" type="Control" parent="UI"]
-layout_mode = 3
+[node name="Food" type="VBoxContainer" parent="UI"]
 anchors_preset = 9
 anchor_bottom = 1.0
+offset_right = 110.0
 grow_vertical = 2
+alignment = 1
 
 [node name="FoodBlue" parent="UI/Food" instance=ExtResource("2_72663")]
-layout_mode = 1
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-grow_horizontal = 1
-grow_vertical = 1
+layout_mode = 2
 food = 2
 
 [node name="FoodGreen" parent="UI/Food" instance=ExtResource("2_72663")]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_right = 0.0
-anchor_bottom = 0.5
-offset_left = 6.0
-offset_top = -111.5
-offset_right = 6.0
-offset_bottom = -111.5
-grow_horizontal = 1
+layout_mode = 2
 
 [node name="FoodPurple" parent="UI/Food" instance=ExtResource("2_72663")]
-layout_mode = 1
-offset_left = 8.0
-offset_top = 448.0
-offset_right = 8.0
-offset_bottom = 448.0
+layout_mode = 2
 food = 3
-
-[node name="SuckTool" parent="UI" instance=ExtResource("3_o81xq")]
-visible = false
-offset_left = -1219.0
-offset_top = 766.0
-offset_right = -1219.0
-offset_bottom = 766.0
-mode = 1
-
-[node name="CarryTool" parent="UI" instance=ExtResource("3_o81xq")]
-visible = false
-offset_left = -1530.0
-offset_top = 767.0
-offset_right = -1530.0
-offset_bottom = 767.0
 
 [node name="Label" type="Label" parent="UI"]
 offset_right = 40.0
 offset_bottom = 23.0
 script = ExtResource("4_iprv4")
+
+[node name="Tools" type="HBoxContainer" parent="UI"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="SuckTool" parent="UI/Tools" instance=ExtResource("3_o81xq")]
+layout_mode = 2
+mode = 1
+sprite = ExtResource("5_1ypwy")
+
+[node name="CarryTool" parent="UI/Tools" instance=ExtResource("3_o81xq")]
+layout_mode = 2
+sprite = ExtResource("6_hunbn")
+
+[node name="PetTool" parent="UI/Tools" instance=ExtResource("3_o81xq")]
+layout_mode = 2
+sprite = ExtResource("6_hunbn")
 
 [node name="ShopScene" parent="." instance=ExtResource("4_xb203")]
 

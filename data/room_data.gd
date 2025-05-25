@@ -37,7 +37,7 @@ func get_activity_type() -> GAME.ACTIVITY_TYPE:
 		return GAME.ACTIVITY_TYPE.NONE
 
 func try_add_spore():
-	var roll: int = 1 + randi() % 100
+	var roll: int = randi_range(20, 80)
 	if alien != null and roll < alien.happiness and _spores.size() < SPORE_LIMIT:
 		var spore: SporeData = alien.get_spore()
 		_spores.append(spore)

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cdcai60s7cvux"
-path="res://.godot/imported/red.png-a2b2da9b6c02109601f84dc1b04c1fa7.ctex"
+uid="uid://bbunrdwtsekaw"
+path="res://.godot/imported/butt_down.png-2971d1b51ee5bcbe503aa22f7ee73d14.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/spore/red.png"
-dest_files=["res://.godot/imported/red.png-a2b2da9b6c02109601f84dc1b04c1fa7.ctex"]
+source_file="res://assets/spray/butt_down.png"
+dest_files=["res://.godot/imported/butt_down.png-2971d1b51ee5bcbe503aa22f7ee73d14.ctex"]
 
 [params]
 

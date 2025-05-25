@@ -11,6 +11,7 @@ z_index = 10
 script = ExtResource("1_1umih")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.35, 0.35)
 
 [node name="AlienScene" parent="." instance=ExtResource("2_eh284")]
 scale = Vector2(0.35, 0.35)

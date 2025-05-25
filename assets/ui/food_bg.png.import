@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cdcai60s7cvux"
-path="res://.godot/imported/red.png-a2b2da9b6c02109601f84dc1b04c1fa7.ctex"
+uid="uid://b05db7w5hrxw4"
+path="res://.godot/imported/food_bg.png-36e996f8f5e62d2b30e0cdf8ad8afe02.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/spore/red.png"
-dest_files=["res://.godot/imported/red.png-a2b2da9b6c02109601f84dc1b04c1fa7.ctex"]
+source_file="res://assets/ui/food_bg.png"
+dest_files=["res://.godot/imported/food_bg.png-36e996f8f5e62d2b30e0cdf8ad8afe02.ctex"]
 
 [params]
 
