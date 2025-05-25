@@ -1,13 +1,14 @@
-[gd_scene load_steps=32 format=3 uid="uid://brwv2x0e5ovtx"]
+[gd_scene load_steps=41 format=3 uid="uid://brwv2x0e5ovtx"]
 
+[ext_resource type="Script" uid="uid://bmup83h4tuhua" path="res://scenes/game_scene/shop/shop_scene.gd" id="1_mmjt5"]
 [ext_resource type="PackedScene" uid="uid://7a7kpmnv4514" path="res://scenes/game_scene/shop/item/shop_item_scene.tscn" id="1_roqrc"]
 [ext_resource type="Script" uid="uid://bmk736v16lttw" path="res://data/shop/shop_upgrade_data.gd" id="2_3a8af"]
 [ext_resource type="Resource" uid="uid://bgyu0o2cut54n" path="res://resources/rooms/room_2.tres" id="3_e07u7"]
+[ext_resource type="Texture2D" uid="uid://bat1tfrua28qm" path="res://assets/shop/tab_down.png" id="3_j5wnf"]
 [ext_resource type="Resource" uid="uid://c1q8th1d7hmme" path="res://resources/rooms/room_3.tres" id="4_e07u7"]
 [ext_resource type="Resource" uid="uid://bu2ucoslq8l8u" path="res://resources/rooms/room_4.tres" id="5_wpbuu"]
 [ext_resource type="Resource" uid="uid://bxjljpb6nj7f3" path="res://resources/rooms/room_5.tres" id="6_c7bn0"]
 [ext_resource type="Resource" uid="uid://bp61s61gunlpj" path="res://resources/rooms/room_6.tres" id="7_prqai"]
-[ext_resource type="Resource" uid="uid://djfbakmj27k86" path="res://resources/rooms/room_7.tres" id="8_87e7f"]
 [ext_resource type="Resource" uid="uid://c2tvvj18rodh" path="res://resources/aliens/blue.tres" id="9_003jr"]
 [ext_resource type="Script" uid="uid://c7e73f38gp4r3" path="res://data/shop/shop_alien_data.gd" id="9_wlc6m"]
 [ext_resource type="Script" uid="uid://d1ilmwbkrl10a" path="res://data/shop/shop_facility_data.gd" id="10_4x80t"]
@@ -17,11 +18,52 @@
 [ext_resource type="Resource" uid="uid://dlivg7r2agpwo" path="res://resources/aliens/purple.tres" id="13_rmycv"]
 [ext_resource type="Resource" uid="uid://c65o2mnu4asb7" path="res://resources/aliens/orange.tres" id="14_1t5rt"]
 [ext_resource type="Resource" uid="uid://cyjvumkfatxvo" path="res://resources/aliens/green.tres" id="15_mmjt5"]
+[ext_resource type="Texture2D" uid="uid://nywdjtipl5kc" path="res://assets/shop/alien_bg.png" id="18_llbf4"]
+[ext_resource type="Texture2D" uid="uid://dlk5cp8xccdfg" path="res://assets/shop/tab_up.png" id="18_rmycv"]
+[ext_resource type="Texture2D" uid="uid://bwtl5c4n45yl1" path="res://assets/shop/upgrade_bg.png" id="20_1t5rt"]
+[ext_resource type="PackedScene" uid="uid://kdrx7mcurvsa" path="res://scenes/game_scene/shop/alien/shop_alien_scene.tscn" id="20_mmjt5"]
+[ext_resource type="Texture2D" uid="uid://c0hfkajpav0is" path="res://assets/shop/shop_up.png" id="22_8mbkk"]
+[ext_resource type="Texture2D" uid="uid://bycwc65r2x2ic" path="res://assets/shop/shop_down.png" id="23_j5wnf"]
+
+[sub_resource type="Resource" id="Resource_m6abw"]
+script = ExtResource("9_wlc6m")
+alien = ExtResource("9_003jr")
+cost = 1
+metadata/_custom_type_script = "uid://c7e73f38gp4r3"
+
+[sub_resource type="Resource" id="Resource_rmycv"]
+script = ExtResource("9_wlc6m")
+alien = ExtResource("15_mmjt5")
+cost = 1
+metadata/_custom_type_script = "uid://c7e73f38gp4r3"
+
+[sub_resource type="Resource" id="Resource_1t5rt"]
+script = ExtResource("9_wlc6m")
+alien = ExtResource("14_1t5rt")
+cost = 1
+metadata/_custom_type_script = "uid://c7e73f38gp4r3"
+
+[sub_resource type="Resource" id="Resource_mmjt5"]
+script = ExtResource("9_wlc6m")
+alien = ExtResource("13_rmycv")
+cost = 1
+metadata/_custom_type_script = "uid://c7e73f38gp4r3"
+
+[sub_resource type="Resource" id="Resource_cyx23"]
+script = ExtResource("9_wlc6m")
+alien = ExtResource("11_m1llw")
+cost = 1
+metadata/_custom_type_script = "uid://c7e73f38gp4r3"
+
+[sub_resource type="Resource" id="Resource_8mbkk"]
+script = ExtResource("9_wlc6m")
+alien = ExtResource("12_llbf4")
+cost = 1
+metadata/_custom_type_script = "uid://c7e73f38gp4r3"
 
 [sub_resource type="Resource" id="Resource_wpbuu"]
 script = ExtResource("2_3a8af")
 room = ExtResource("3_e07u7")
-title = "Room 2"
 cost = 1
 metadata/_custom_type_script = ExtResource("2_3a8af")
 
@@ -29,7 +71,6 @@ metadata/_custom_type_script = ExtResource("2_3a8af")
 script = ExtResource("2_3a8af")
 room = ExtResource("4_e07u7")
 prev = ExtResource("3_e07u7")
-title = "Room 3"
 cost = 1
 metadata/_custom_type_script = ExtResource("2_3a8af")
 
@@ -37,7 +78,6 @@ metadata/_custom_type_script = ExtResource("2_3a8af")
 script = ExtResource("2_3a8af")
 room = ExtResource("5_wpbuu")
 prev = ExtResource("4_e07u7")
-title = "Room 4"
 cost = 1
 metadata/_custom_type_script = ExtResource("2_3a8af")
 
@@ -45,7 +85,6 @@ metadata/_custom_type_script = ExtResource("2_3a8af")
 script = ExtResource("2_3a8af")
 room = ExtResource("6_c7bn0")
 prev = ExtResource("5_wpbuu")
-title = "Room 5"
 cost = 1
 metadata/_custom_type_script = ExtResource("2_3a8af")
 
@@ -53,65 +92,13 @@ metadata/_custom_type_script = ExtResource("2_3a8af")
 script = ExtResource("2_3a8af")
 room = ExtResource("7_prqai")
 prev = ExtResource("6_c7bn0")
-title = "Room 6"
 cost = 1
 metadata/_custom_type_script = ExtResource("2_3a8af")
-
-[sub_resource type="Resource" id="Resource_4x1r4"]
-script = ExtResource("2_3a8af")
-room = ExtResource("8_87e7f")
-prev = ExtResource("7_prqai")
-title = "Room 7"
-cost = 1
-metadata/_custom_type_script = ExtResource("2_3a8af")
-
-[sub_resource type="Resource" id="Resource_4x80t"]
-script = ExtResource("9_wlc6m")
-alien = ExtResource("9_003jr")
-title = "Blue Alien"
-cost = 1
-metadata/_custom_type_script = ExtResource("9_wlc6m")
-
-[sub_resource type="Resource" id="Resource_003jr"]
-script = ExtResource("9_wlc6m")
-alien = ExtResource("11_m1llw")
-title = "Red Alien"
-cost = 1
-metadata/_custom_type_script = ExtResource("9_wlc6m")
-
-[sub_resource type="Resource" id="Resource_el1qr"]
-script = ExtResource("9_wlc6m")
-alien = ExtResource("12_llbf4")
-title = "Yellow Alien"
-cost = 1
-metadata/_custom_type_script = ExtResource("9_wlc6m")
-
-[sub_resource type="Resource" id="Resource_2rl1y"]
-script = ExtResource("9_wlc6m")
-alien = ExtResource("13_rmycv")
-title = "Purple Alien"
-cost = 1
-metadata/_custom_type_script = ExtResource("9_wlc6m")
-
-[sub_resource type="Resource" id="Resource_eg3xt"]
-script = ExtResource("9_wlc6m")
-alien = ExtResource("14_1t5rt")
-title = "Orange Alien"
-cost = 1
-metadata/_custom_type_script = ExtResource("9_wlc6m")
-
-[sub_resource type="Resource" id="Resource_m6abw"]
-script = ExtResource("9_wlc6m")
-alien = ExtResource("15_mmjt5")
-title = "Green Alien"
-cost = 1
-metadata/_custom_type_script = ExtResource("9_wlc6m")
 
 [sub_resource type="Resource" id="Resource_m1llw"]
 script = ExtResource("10_4x80t")
 type = 3
 room = ExtResource("11_003jr")
-title = "Spin Room"
 cost = 1
 metadata/_custom_type_script = ExtResource("10_4x80t")
 
@@ -120,77 +107,205 @@ script = ExtResource("10_4x80t")
 type = 3
 room = ExtResource("5_wpbuu")
 prev = ExtResource("11_003jr")
-title = "Spin Room"
 cost = 1
 metadata/_custom_type_script = ExtResource("10_4x80t")
 
-[node name="ShopScene" type="CanvasLayer"]
+[sub_resource type="Animation" id="Animation_j5wnf"]
+resource_name = "slide_out"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Shop:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1200, 0), Vector2(1550, 0)]
+}
 
-[node name="ScrollContainer" type="ScrollContainer" parent="."]
+[sub_resource type="Animation" id="Animation_wmcqq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Shop:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1200, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_am1g1"]
+_data = {
+&"RESET": SubResource("Animation_wmcqq"),
+&"slide_out": SubResource("Animation_j5wnf")
+}
+
+[node name="ShopScene" type="CanvasLayer"]
+script = ExtResource("1_mmjt5")
+
+[node name="Shop" type="Control" parent="."]
+layout_mode = 3
 anchors_preset = 11
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 0
 grow_vertical = 2
-horizontal_scroll_mode = 0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
-layout_mode = 2
-theme_override_constants/separation = 0
+[node name="Tab" type="TextureButton" parent="Shop"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -450.0
+offset_top = -167.5
+offset_right = -307.792
+offset_bottom = -67.5
+grow_horizontal = 0
+grow_vertical = 2
+texture_normal = ExtResource("18_rmycv")
+texture_pressed = ExtResource("3_j5wnf")
+ignore_texture_size = true
+stretch_mode = 5
 
-[node name="Room2" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_roqrc")]
-layout_mode = 2
-data = SubResource("Resource_wpbuu")
+[node name="AlienShop" type="TextureRect" parent="Shop"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 0.25
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -322.826
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("18_llbf4")
+expand_mode = 3
+stretch_mode = 5
 
-[node name="Room3" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_roqrc")]
-layout_mode = 2
-data = SubResource("Resource_c7bn0")
+[node name="Items" type="GridContainer" parent="Shop/AlienShop"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 68.0
+offset_top = 26.0
+offset_right = -17.8261
+offset_bottom = -26.25
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 50
+columns = 2
 
-[node name="Room4" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_roqrc")]
-layout_mode = 2
-data = SubResource("Resource_prqai")
-
-[node name="Room5" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_roqrc")]
-layout_mode = 2
-data = SubResource("Resource_87e7f")
-
-[node name="Room6" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_roqrc")]
-layout_mode = 2
-data = SubResource("Resource_wlc6m")
-
-[node name="Room7" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_roqrc")]
-layout_mode = 2
-data = SubResource("Resource_4x1r4")
-
-[node name="Blue" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_roqrc")]
-layout_mode = 2
-data = SubResource("Resource_4x80t")
-
-[node name="Red" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_roqrc")]
-layout_mode = 2
-data = SubResource("Resource_003jr")
-
-[node name="Yellow" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_roqrc")]
-layout_mode = 2
-data = SubResource("Resource_el1qr")
-
-[node name="Purple" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_roqrc")]
-layout_mode = 2
-data = SubResource("Resource_2rl1y")
-
-[node name="Orange" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_roqrc")]
-layout_mode = 2
-data = SubResource("Resource_eg3xt")
-
-[node name="Green" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_roqrc")]
+[node name="Blue" parent="Shop/AlienShop/Items" instance=ExtResource("20_mmjt5")]
 layout_mode = 2
 data = SubResource("Resource_m6abw")
 
-[node name="Spin1" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_roqrc")]
+[node name="Green" parent="Shop/AlienShop/Items" instance=ExtResource("20_mmjt5")]
+layout_mode = 2
+data = SubResource("Resource_rmycv")
+
+[node name="Orange" parent="Shop/AlienShop/Items" instance=ExtResource("20_mmjt5")]
+layout_mode = 2
+data = SubResource("Resource_1t5rt")
+
+[node name="Purple" parent="Shop/AlienShop/Items" instance=ExtResource("20_mmjt5")]
+layout_mode = 2
+data = SubResource("Resource_mmjt5")
+
+[node name="Red" parent="Shop/AlienShop/Items" instance=ExtResource("20_mmjt5")]
+layout_mode = 2
+data = SubResource("Resource_cyx23")
+
+[node name="Yellow" parent="Shop/AlienShop/Items" instance=ExtResource("20_mmjt5")]
+layout_mode = 2
+data = SubResource("Resource_8mbkk")
+
+[node name="UpgradeShop" type="TextureRect" parent="Shop"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 0.25
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -322.826
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("20_1t5rt")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="VBoxContainer" type="GridContainer" parent="Shop/UpgradeShop"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 130.0
+offset_top = 30.0
+offset_right = 17.1739
+offset_bottom = 583.75
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 60
+
+[node name="Room2" parent="Shop/UpgradeShop/VBoxContainer" instance=ExtResource("1_roqrc")]
+layout_mode = 2
+data = SubResource("Resource_wpbuu")
+
+[node name="Room3" parent="Shop/UpgradeShop/VBoxContainer" instance=ExtResource("1_roqrc")]
+layout_mode = 2
+data = SubResource("Resource_c7bn0")
+
+[node name="Room4" parent="Shop/UpgradeShop/VBoxContainer" instance=ExtResource("1_roqrc")]
+layout_mode = 2
+data = SubResource("Resource_prqai")
+
+[node name="Room5" parent="Shop/UpgradeShop/VBoxContainer" instance=ExtResource("1_roqrc")]
+layout_mode = 2
+data = SubResource("Resource_87e7f")
+
+[node name="Room6" parent="Shop/UpgradeShop/VBoxContainer" instance=ExtResource("1_roqrc")]
+layout_mode = 2
+data = SubResource("Resource_wlc6m")
+
+[node name="Spin1" parent="Shop/UpgradeShop/VBoxContainer" instance=ExtResource("1_roqrc")]
 layout_mode = 2
 data = SubResource("Resource_m1llw")
 
-[node name="Spin2" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_roqrc")]
+[node name="Spin2" parent="Shop/UpgradeShop/VBoxContainer" instance=ExtResource("1_roqrc")]
 layout_mode = 2
 data = SubResource("Resource_llbf4")
+
+[node name="Page" type="TextureButton" parent="Shop"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -300.0
+offset_top = -75.0
+offset_right = -260.0
+offset_bottom = -35.0
+grow_vertical = 0
+texture_normal = ExtResource("22_8mbkk")
+texture_pressed = ExtResource("23_j5wnf")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_am1g1")
+}
+
+[connection signal="pressed" from="Shop/Tab" to="." method="_on_tab_pressed"]
+[connection signal="pressed" from="Shop/Page" to="." method="_on_page_pressed"]

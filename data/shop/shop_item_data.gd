@@ -2,7 +2,6 @@ extends Resource
 
 class_name ShopItemData
 
-@export var title: String = ""
 @export var cost: int = 1
 
 signal on_update()

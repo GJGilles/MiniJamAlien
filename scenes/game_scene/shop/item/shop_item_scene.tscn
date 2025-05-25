@@ -1,53 +1,65 @@
-[gd_scene load_steps=3 format=3 uid="uid://7a7kpmnv4514"]
+[gd_scene load_steps=4 format=3 uid="uid://7a7kpmnv4514"]
 
 [ext_resource type="Script" uid="uid://cohfrjdhl2udq" path="res://scenes/game_scene/shop/item/shop_item_scene.gd" id="1_b78is"]
+[ext_resource type="Texture2D" uid="uid://btjnfpv37io84" path="res://assets/room/spray.png" id="2_l8tl1"]
+[ext_resource type="Texture2D" uid="uid://brutfpoh3yji4" path="res://assets/ui/dimes.png" id="3_1ndrb"]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_6kl6v"]
-
-[node name="ShopItemScene" type="Panel"]
-custom_minimum_size = Vector2(200, 100)
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = -760.0
-offset_bottom = -440.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="ShopItemScene" type="Button"]
+custom_minimum_size = Vector2(100, 100)
+offset_right = 100.0
+offset_bottom = 100.0
+flat = true
 script = ExtResource("1_b78is")
 
 [node name="Icon" type="TextureRect" parent="."]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.05
-anchor_top = 0.1
-anchor_right = 0.45
-anchor_bottom = 0.9
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
 grow_vertical = 2
-texture = SubResource("PlaceholderTexture2D_6kl6v")
+texture = ExtResource("2_l8tl1")
 expand_mode = 3
 stretch_mode = 5
 
-[node name="Cost" type="Button" parent="."]
+[node name="Cost" type="Control" parent="."]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.55
-anchor_top = 0.1
-anchor_right = 0.95
-anchor_bottom = 0.45
-offset_right = -1.52588e-05
-grow_horizontal = 0
-text = "100"
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
 
-[node name="Name" type="Label" parent="."]
+[node name="Label" type="Label" parent="Cost"]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.55
-anchor_top = 0.55
-anchor_right = 0.95
-anchor_bottom = 0.9
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -10.0
+offset_right = -40.0
+offset_bottom = 35.0
 grow_horizontal = 0
 grow_vertical = 0
-text = "Red Alien"
+theme_override_font_sizes/font_size = 32
+text = "10"
+horizontal_alignment = 2
 vertical_alignment = 1
 
-[connection signal="pressed" from="Cost" to="." method="_on_pressed"]
+[node name="Icon" type="TextureRect" parent="Cost"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_top = -10.0
+offset_bottom = 30.0
+grow_horizontal = 0
+texture = ExtResource("3_1ndrb")
+expand_mode = 5
+stretch_mode = 5
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

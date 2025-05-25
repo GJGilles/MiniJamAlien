@@ -100,14 +100,11 @@ func get_food_cooldown() -> float:
 func get_activity_cooldown() -> float:
 	return 8.0
 	
-func do_food_want(food: GAME.FOOD_TYPE) -> bool:
+func do_food_want(food: GAME.FOOD_TYPE):
 	if curr_food_want == food:
 		happiness += get_food_wants()[curr_food_want]
 		curr_food_want = GAME.FOOD_TYPE.NONE
 		time_food_want = 0
-		return true
-	else:
-		return false
 
 func do_activity_want(activity: GAME.ACTIVITY_TYPE):
 	if curr_activity_want == activity:

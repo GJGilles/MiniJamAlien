@@ -6,8 +6,7 @@ var all_rooms: Array[RoomData] = [
 	preload("res://resources/rooms/room_3.tres"),
 	preload("res://resources/rooms/room_4.tres"),
 	preload("res://resources/rooms/room_5.tres"),
-	preload("res://resources/rooms/room_6.tres"),
-	preload("res://resources/rooms/room_7.tres")
+	preload("res://resources/rooms/room_6.tres")
 ]
 
 func get_without_alien() -> RoomData:

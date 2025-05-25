@@ -6,6 +6,7 @@
 [ext_resource type="Resource" uid="uid://mw7drbrjvyv1" path="res://resources/rooms/room_1.tres" id="2_hqmgi"]
 [ext_resource type="Resource" uid="uid://bgyu0o2cut54n" path="res://resources/rooms/room_2.tres" id="3_3di6p"]
 [ext_resource type="PackedScene" uid="uid://cbrxpudjvhjs" path="res://scenes/game_scene/tool/tool_scene.tscn" id="3_o81xq"]
+[ext_resource type="Texture2D" uid="uid://brutfpoh3yji4" path="res://assets/ui/dimes.png" id="4_1ypwy"]
 [ext_resource type="Script" uid="uid://b3ofskhey2tmk" path="res://scenes/game_scene/money/money_scene.gd" id="4_iprv4"]
 [ext_resource type="Resource" uid="uid://c1q8th1d7hmme" path="res://resources/rooms/room_3.tres" id="4_jytbd"]
 [ext_resource type="PackedScene" uid="uid://brwv2x0e5ovtx" path="res://scenes/game_scene/shop/shop_scene.tscn" id="4_xb203"]
@@ -14,7 +15,6 @@
 [ext_resource type="Resource" uid="uid://bxjljpb6nj7f3" path="res://resources/rooms/room_5.tres" id="6_1ypwy"]
 [ext_resource type="Texture2D" uid="uid://xdg3dojinin7" path="res://assets/mouse/pet.png" id="6_hunbn"]
 [ext_resource type="Resource" uid="uid://bp61s61gunlpj" path="res://resources/rooms/room_6.tres" id="7_hunbn"]
-[ext_resource type="Resource" uid="uid://djfbakmj27k86" path="res://resources/rooms/room_7.tres" id="8_7aaem"]
 
 [node name="GameScene" type="Node2D"]
 
@@ -52,9 +52,32 @@ layout_mode = 2
 food = 3
 
 [node name="Label" type="Label" parent="UI"]
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 75.0
+offset_bottom = 65.0
+theme_override_font_sizes/font_size = 32
+text = "500"
+horizontal_alignment = 2
+vertical_alignment = 1
 script = ExtResource("4_iprv4")
+
+[node name="TextureRect" type="TextureRect" parent="UI/Label"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 5.0
+offset_top = -20.0
+offset_right = 47.1769
+offset_bottom = 20.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("4_1ypwy")
+expand_mode = 3
+stretch_mode = 5
 
 [node name="Tools" type="HBoxContainer" parent="UI"]
 anchors_preset = 12
@@ -80,7 +103,7 @@ sprite = ExtResource("6_hunbn")
 [node name="ShopScene" parent="." instance=ExtResource("4_xb203")]
 
 [node name="Rooms" type="Node2D" parent="."]
-position = Vector2(600, 300)
+position = Vector2(600, 280)
 scale = Vector2(0.35, 0.35)
 
 [node name="RoomScene1" parent="Rooms" instance=ExtResource("1_pwder")]
@@ -99,13 +122,9 @@ position = Vector2(-280, 480)
 data = ExtResource("5_iprv4")
 
 [node name="RoomScene5" parent="Rooms" instance=ExtResource("1_pwder")]
-position = Vector2(280, -480)
+position = Vector2(-840, 480)
 data = ExtResource("6_1ypwy")
 
 [node name="RoomScene6" parent="Rooms" instance=ExtResource("1_pwder")]
 position = Vector2(280, 480)
 data = ExtResource("7_hunbn")
-
-[node name="RoomScene7" parent="Rooms" instance=ExtResource("1_pwder")]
-position = Vector2(560, 0)
-data = ExtResource("8_7aaem")

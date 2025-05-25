@@ -1,8 +1,7 @@
-extends Panel
+extends Control
 
 @onready var icon: TextureRect = $Icon
-@onready var cost: Button = $Cost
-@onready var title: Label = $Name
+@onready var cost: Label = $Cost/Label
 
 @export var data: ShopItemData:
 	get:
@@ -25,7 +24,6 @@ func on_update():
 	visible = data.is_active()
 	icon.texture = data.get_sprite()
 	cost.text = str(data.cost)
-	title.text = data.title
 
 
 func _on_pressed() -> void:

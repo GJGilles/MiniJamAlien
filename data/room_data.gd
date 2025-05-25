@@ -15,7 +15,13 @@ const SPORE_LIMIT: int = 5
 	get:
 		return alien
 	set(value):
+		if alien != null:
+			alien.on_happy.disconnect(try_add_spore)
+		
 		alien = value
+		if alien != null:
+			alien.on_happy.connect(try_add_spore)
+		
 		on_update.emit()
 
 @export var facility: FacilityData:
@@ -37,7 +43,7 @@ func get_activity_type() -> GAME.ACTIVITY_TYPE:
 		return GAME.ACTIVITY_TYPE.NONE
 
 func try_add_spore():
-	var roll: int = randi_range(20, 80)
+	var roll: int = randi_range(20, 60)
 	if alien != null and roll < alien.happiness and _spores.size() < SPORE_LIMIT:
 		var spore: SporeData = alien.get_spore()
 		_spores.append(spore)

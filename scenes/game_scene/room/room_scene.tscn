@@ -40,7 +40,7 @@ polygon = PackedVector2Array(1.6226e-14, -265, 51.6989, -259.908, 101.411, -244.
 script = ExtResource("4_lmom5")
 radius = 260.0
 width = 10.0
-metadata/_custom_type_script = ExtResource("4_lmom5")
+metadata/_custom_type_script = "uid://b1bglf0bnoo2t"
 
 [node name="Spores" type="Node2D" parent="."]
 scale = Vector2(0.2, 0.2)

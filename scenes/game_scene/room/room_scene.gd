@@ -51,8 +51,8 @@ func alien_movement():
 
 func deposit(carry: CarryData, from: RoomScene):
 	if carry is CarryFoodData:
-		if data.alien != null and data.alien.do_food_want(carry.food):
-			data.try_add_spore()
+		if data.alien != null: 
+			data.alien.do_food_want(carry.food)
 	elif carry is CarryAlienData:
 		if data.alien != null and from != null:
 			from.data.alien = data.alien
@@ -62,7 +62,7 @@ func pickup() -> CarryData:
 	if is_item_active():
 		MINIGAME.start(data)
 		return null
-	elif data.alien != null:
+	elif data.is_unlocked and data.alien != null:
 		var carry: CarryData = CarryAlienData.create(data.alien)
 		data.alien = null
 		return carry
