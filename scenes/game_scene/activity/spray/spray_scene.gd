@@ -16,6 +16,12 @@ var clumps: Dictionary[int, float] = {}
 var active_laser: int = -1
 
 func _ready() -> void:
+	visibility_changed.connect(func():
+		if is_visible_in_tree():
+			on_open()
+	)
+
+func on_open():
 	clumps = {}
 	for i in range(3):
 		var idx: int = randi() % 4
@@ -30,8 +36,10 @@ func _physics_process(delta: float) -> void:
 		
 		if clumps[active_laser] < 0:
 			get_sprite_node(active_laser).visible = false
+			clumps.erase(active_laser)
 		
-		if clumps.values().all(func(val: float): return val < 0):
+		if clumps.values().size() == 0:
+			active_laser = -1
 			done()
 
 func get_laser_node(i: int) -> Sprite2D:

@@ -29,13 +29,16 @@ var money: int:
 	get:
 		return money
 	set(value):
+		if value < money:
+			on_sell.emit()
 		money = value
 		on_update.emit()
 
 signal on_update()
+signal on_sell()
 
 func _ready() -> void:
-	money = 10
+	money = 5
 
 func get_alien_texture(alien: ALIEN_TYPE) -> Texture2D:
 	match alien:

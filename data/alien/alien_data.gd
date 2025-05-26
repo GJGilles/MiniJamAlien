@@ -4,6 +4,7 @@ class_name AlienData
 
 const FOOD_WANT_TIMEOUT: float = 5
 const ACTIVITY_WANT_TIMEOUT: float = 10
+const BLUSH_TIMEOUT: float = 0.5
 
 var is_unlocked: bool = false:
 	get:
@@ -12,11 +13,12 @@ var is_unlocked: bool = false:
 		is_unlocked = value
 		on_update.emit()
 
-var happiness: int:
+var happiness: float:
 	get:
 		return happiness
 	set(value):
 		if value > happiness:
+			time_blush = 0
 			on_happy.emit()
 		
 		happiness = clamp(value, 0, 100)
@@ -70,11 +72,21 @@ var time_activity_want: float:
 		else:
 			time_activity_want = value
 
+var time_blush: float = 1:
+	get:
+		return time_blush
+	set(value):
+		if time_blush < BLUSH_TIMEOUT or value < BLUSH_TIMEOUT:
+			time_blush = value
+			if time_blush > BLUSH_TIMEOUT:
+				on_update.emit()
+
 signal on_update()
 signal on_happy()
 
 func _init():
 	happiness = 20
+	time_blush = BLUSH_TIMEOUT
 	
 	time_food_want = 10
 	time_activity_want = 0
@@ -111,3 +123,6 @@ func do_activity_want(activity: GAME.ACTIVITY_TYPE):
 		happiness += get_activity_wants()[curr_activity_want]
 		curr_activity_want = GAME.ACTIVITY_TYPE.NONE
 		time_activity_want = 0
+
+func do_pet():
+	happiness += 0.05

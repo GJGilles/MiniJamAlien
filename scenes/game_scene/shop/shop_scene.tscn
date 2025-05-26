@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://brwv2x0e5ovtx"]
+[gd_scene load_steps=55 format=3 uid="uid://brwv2x0e5ovtx"]
 
 [ext_resource type="Script" uid="uid://bmup83h4tuhua" path="res://scenes/game_scene/shop/shop_scene.gd" id="1_mmjt5"]
 [ext_resource type="PackedScene" uid="uid://7a7kpmnv4514" path="res://scenes/game_scene/shop/item/shop_item_scene.tscn" id="1_roqrc"]
@@ -24,82 +24,88 @@
 [ext_resource type="PackedScene" uid="uid://kdrx7mcurvsa" path="res://scenes/game_scene/shop/alien/shop_alien_scene.tscn" id="20_mmjt5"]
 [ext_resource type="Texture2D" uid="uid://c0hfkajpav0is" path="res://assets/shop/shop_up.png" id="22_8mbkk"]
 [ext_resource type="Texture2D" uid="uid://bycwc65r2x2ic" path="res://assets/shop/shop_down.png" id="23_j5wnf"]
+[ext_resource type="Texture2D" uid="uid://ck8ia8xep0fsf" path="res://assets/shop/penta.png" id="25_wmcqq"]
+[ext_resource type="Texture2D" uid="uid://drt2ea4ch3hko" path="res://assets/shop/Message Welcome.png" id="26_am1g1"]
+[ext_resource type="Texture2D" uid="uid://uxwb6p1dmp6w" path="res://assets/shop/Penta Happy.png" id="27_4isty"]
+[ext_resource type="Texture2D" uid="uid://d02sik2w23ah2" path="res://assets/shop/Message Buy Room.png" id="28_0gd2g"]
+[ext_resource type="Texture2D" uid="uid://bycdmpb53tjay" path="res://assets/shop/Penta Eggstatic.png" id="29_1a0lm"]
+[ext_resource type="Texture2D" uid="uid://7xgsdyllj12o" path="res://assets/shop/Message Adopt Pet 1.png" id="30_5l0pt"]
 
 [sub_resource type="Resource" id="Resource_m6abw"]
 script = ExtResource("9_wlc6m")
 alien = ExtResource("9_003jr")
-cost = 1
-metadata/_custom_type_script = "uid://c7e73f38gp4r3"
-
-[sub_resource type="Resource" id="Resource_rmycv"]
-script = ExtResource("9_wlc6m")
-alien = ExtResource("15_mmjt5")
-cost = 1
-metadata/_custom_type_script = "uid://c7e73f38gp4r3"
-
-[sub_resource type="Resource" id="Resource_1t5rt"]
-script = ExtResource("9_wlc6m")
-alien = ExtResource("14_1t5rt")
-cost = 1
-metadata/_custom_type_script = "uid://c7e73f38gp4r3"
-
-[sub_resource type="Resource" id="Resource_mmjt5"]
-script = ExtResource("9_wlc6m")
-alien = ExtResource("13_rmycv")
-cost = 1
+cost = 3
 metadata/_custom_type_script = "uid://c7e73f38gp4r3"
 
 [sub_resource type="Resource" id="Resource_cyx23"]
 script = ExtResource("9_wlc6m")
 alien = ExtResource("11_m1llw")
-cost = 1
+cost = 3
 metadata/_custom_type_script = "uid://c7e73f38gp4r3"
 
 [sub_resource type="Resource" id="Resource_8mbkk"]
 script = ExtResource("9_wlc6m")
 alien = ExtResource("12_llbf4")
-cost = 1
+cost = 3
+metadata/_custom_type_script = "uid://c7e73f38gp4r3"
+
+[sub_resource type="Resource" id="Resource_1t5rt"]
+script = ExtResource("9_wlc6m")
+alien = ExtResource("14_1t5rt")
+cost = 8
+metadata/_custom_type_script = "uid://c7e73f38gp4r3"
+
+[sub_resource type="Resource" id="Resource_mmjt5"]
+script = ExtResource("9_wlc6m")
+alien = ExtResource("13_rmycv")
+cost = 10
+metadata/_custom_type_script = "uid://c7e73f38gp4r3"
+
+[sub_resource type="Resource" id="Resource_rmycv"]
+script = ExtResource("9_wlc6m")
+alien = ExtResource("15_mmjt5")
+cost = 25
 metadata/_custom_type_script = "uid://c7e73f38gp4r3"
 
 [sub_resource type="Resource" id="Resource_wpbuu"]
 script = ExtResource("2_3a8af")
 room = ExtResource("3_e07u7")
-cost = 1
+cost = 6
 metadata/_custom_type_script = ExtResource("2_3a8af")
 
 [sub_resource type="Resource" id="Resource_c7bn0"]
 script = ExtResource("2_3a8af")
 room = ExtResource("4_e07u7")
 prev = ExtResource("3_e07u7")
-cost = 1
+cost = 6
 metadata/_custom_type_script = ExtResource("2_3a8af")
 
 [sub_resource type="Resource" id="Resource_prqai"]
 script = ExtResource("2_3a8af")
 room = ExtResource("5_wpbuu")
 prev = ExtResource("4_e07u7")
-cost = 1
+cost = 12
 metadata/_custom_type_script = ExtResource("2_3a8af")
 
 [sub_resource type="Resource" id="Resource_87e7f"]
 script = ExtResource("2_3a8af")
 room = ExtResource("6_c7bn0")
 prev = ExtResource("5_wpbuu")
-cost = 1
+cost = 12
 metadata/_custom_type_script = ExtResource("2_3a8af")
 
 [sub_resource type="Resource" id="Resource_wlc6m"]
 script = ExtResource("2_3a8af")
 room = ExtResource("7_prqai")
 prev = ExtResource("6_c7bn0")
-cost = 1
+cost = 20
 metadata/_custom_type_script = ExtResource("2_3a8af")
 
 [sub_resource type="Resource" id="Resource_m1llw"]
 script = ExtResource("10_4x80t")
 type = 3
 room = ExtResource("11_003jr")
-cost = 1
+cost = 8
 metadata/_custom_type_script = ExtResource("10_4x80t")
 
 [sub_resource type="Resource" id="Resource_llbf4"]
@@ -107,23 +113,219 @@ script = ExtResource("10_4x80t")
 type = 3
 room = ExtResource("5_wpbuu")
 prev = ExtResource("11_003jr")
-cost = 1
+cost = 22
 metadata/_custom_type_script = ExtResource("10_4x80t")
 
-[sub_resource type="Animation" id="Animation_j5wnf"]
-resource_name = "slide_out"
-length = 0.25
+[sub_resource type="Resource" id="Resource_1a0lm"]
+script = ExtResource("10_4x80t")
+type = 1
+room = ExtResource("3_e07u7")
+cost = 16
+metadata/_custom_type_script = "uid://d1ilmwbkrl10a"
+
+[sub_resource type="Resource" id="Resource_5l0pt"]
+script = ExtResource("10_4x80t")
+type = 1
+room = ExtResource("4_e07u7")
+prev = ExtResource("3_e07u7")
+cost = 32
+metadata/_custom_type_script = "uid://d1ilmwbkrl10a"
+
+[sub_resource type="Animation" id="Animation_am1g1"]
+resource_name = "welcome"
+length = 5.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Shop:position")
+tracks/0/path = NodePath("Penta:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("27_4isty"), ExtResource("25_wmcqq")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Message:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Message:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("26_am1g1")]
+}
+
+[sub_resource type="Animation" id="Animation_4isty"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Penta:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("25_wmcqq")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Message:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Message:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("26_am1g1")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Penta:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-110, -110)]
+}
+
+[sub_resource type="Animation" id="Animation_0gd2g"]
+resource_name = "buy"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Penta:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("27_4isty"), ExtResource("25_wmcqq")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Message:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("28_0gd2g")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Message:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_nutbr"]
+resource_name = "adopt"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Penta:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("29_1a0lm"), ExtResource("25_wmcqq")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Message:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Message:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("30_5l0pt")]
+}
+
+[sub_resource type="Animation" id="Animation_1a0lm"]
+resource_name = "idle"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Penta:position")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.25),
+"times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(1200, 0), Vector2(1550, 0)]
+"values": [Vector2(-110, -125), Vector2(-110, -115)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0gd2g"]
+_data = {
+&"RESET": SubResource("Animation_4isty"),
+&"adopt": SubResource("Animation_nutbr"),
+&"buy": SubResource("Animation_0gd2g"),
+&"idle": SubResource("Animation_1a0lm"),
+&"welcome": SubResource("Animation_am1g1")
 }
 
 [sub_resource type="Animation" id="Animation_wmcqq"]
@@ -139,6 +341,22 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(1200, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_j5wnf"]
+resource_name = "slide_out"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Shop:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1200, 0), Vector2(1550, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_am1g1"]
@@ -178,7 +396,6 @@ ignore_texture_size = true
 stretch_mode = 5
 
 [node name="AlienShop" type="TextureRect" parent="Shop"]
-visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 1.0
@@ -197,9 +414,9 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 68.0
+offset_left = 75.0
 offset_top = 26.0
-offset_right = -17.8261
+offset_right = -27.826
 offset_bottom = -26.25
 grow_horizontal = 2
 grow_vertical = 2
@@ -211,9 +428,13 @@ columns = 2
 layout_mode = 2
 data = SubResource("Resource_m6abw")
 
-[node name="Green" parent="Shop/AlienShop/Items" instance=ExtResource("20_mmjt5")]
+[node name="Red" parent="Shop/AlienShop/Items" instance=ExtResource("20_mmjt5")]
 layout_mode = 2
-data = SubResource("Resource_rmycv")
+data = SubResource("Resource_cyx23")
+
+[node name="Yellow" parent="Shop/AlienShop/Items" instance=ExtResource("20_mmjt5")]
+layout_mode = 2
+data = SubResource("Resource_8mbkk")
 
 [node name="Orange" parent="Shop/AlienShop/Items" instance=ExtResource("20_mmjt5")]
 layout_mode = 2
@@ -223,15 +444,12 @@ data = SubResource("Resource_1t5rt")
 layout_mode = 2
 data = SubResource("Resource_mmjt5")
 
-[node name="Red" parent="Shop/AlienShop/Items" instance=ExtResource("20_mmjt5")]
+[node name="Green" parent="Shop/AlienShop/Items" instance=ExtResource("20_mmjt5")]
 layout_mode = 2
-data = SubResource("Resource_cyx23")
-
-[node name="Yellow" parent="Shop/AlienShop/Items" instance=ExtResource("20_mmjt5")]
-layout_mode = 2
-data = SubResource("Resource_8mbkk")
+data = SubResource("Resource_rmycv")
 
 [node name="UpgradeShop" type="TextureRect" parent="Shop"]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 1.0
@@ -250,14 +468,14 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 130.0
-offset_top = 30.0
-offset_right = 17.1739
-offset_bottom = 583.75
+offset_left = 117.826
+offset_top = 22.25
+offset_right = 4.99988
+offset_bottom = 736.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/h_separation = 10
-theme_override_constants/v_separation = 60
+theme_override_constants/v_separation = 30
 
 [node name="Room2" parent="Shop/UpgradeShop/VBoxContainer" instance=ExtResource("1_roqrc")]
 layout_mode = 2
@@ -287,6 +505,14 @@ data = SubResource("Resource_m1llw")
 layout_mode = 2
 data = SubResource("Resource_llbf4")
 
+[node name="Spray1" parent="Shop/UpgradeShop/VBoxContainer" instance=ExtResource("1_roqrc")]
+layout_mode = 2
+data = SubResource("Resource_1a0lm")
+
+[node name="Spray2" parent="Shop/UpgradeShop/VBoxContainer" instance=ExtResource("1_roqrc")]
+layout_mode = 2
+data = SubResource("Resource_5l0pt")
+
 [node name="Page" type="TextureButton" parent="Shop"]
 layout_mode = 1
 anchors_preset = 2
@@ -301,6 +527,41 @@ texture_normal = ExtResource("22_8mbkk")
 texture_pressed = ExtResource("23_j5wnf")
 ignore_texture_size = true
 stretch_mode = 5
+
+[node name="Control" type="Control" parent="Shop"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Penta" type="TextureRect" parent="Shop/Control"]
+layout_mode = 0
+offset_left = -110.0
+offset_top = -115.0
+offset_right = -10.0
+offset_bottom = -15.0001
+texture = ExtResource("25_wmcqq")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Message" type="TextureRect" parent="Shop/Control"]
+visible = false
+layout_mode = 0
+offset_left = -270.0
+offset_top = -100.0
+offset_right = -70.0
+offset_bottom = -30.0
+texture = ExtResource("26_am1g1")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Shop/Control"]
+libraries = {
+&"": SubResource("AnimationLibrary_0gd2g")
+}
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

@@ -17,6 +17,13 @@ var mode: MOUSE_MODE:
 	set(value):
 		curr_carry = null
 		mode = value
+		match mode:
+			MOUSE_MODE.CARRY:
+				sprite_2d.texture = null
+			MOUSE_MODE.SUCK:
+				sprite_2d.texture = load("res://assets/mouse/suck_off.png")
+			MOUSE_MODE.PET:
+				sprite_2d.texture = load("res://assets/mouse/pet_up.png")
 
 var curr_carry: CarryData:
 	get:
@@ -45,11 +52,12 @@ func _physics_process(delta: float) -> void:
 		curr_target.suck_to(global_position, SUCK_FORCE)
 
 func _input(event: InputEvent) -> void:
+	if event is InputEventMouseMotion:
+		position = (event.position - get_canvas_transform().origin) / get_canvas_transform().get_scale()
+		
 	match mode: 
 		MOUSE_MODE.CARRY:
-			if event is InputEventMouseMotion:
-				position = (event.position - get_canvas_transform().origin) / get_canvas_transform().get_scale()
-			elif event is InputEventMouseButton and event.button_index == MouseButton.MOUSE_BUTTON_LEFT:
+			if event is InputEventMouseButton and event.button_index == MouseButton.MOUSE_BUTTON_LEFT:
 				if event.pressed and curr_carry == null and curr_target != null:
 					curr_carry = curr_target.pickup()
 					curr_source = curr_target
@@ -59,10 +67,23 @@ func _input(event: InputEvent) -> void:
 					elif curr_carry is CarryAlienData:
 						curr_source.deposit(curr_carry, null)
 					curr_carry = null
-						
+		
 		MOUSE_MODE.SUCK:
-			if event is InputEventMouseMotion:
-				position = (event.position - get_canvas_transform().origin) / get_canvas_transform().get_scale()
+			if event is InputEventMouseButton and event.button_index == MouseButton.MOUSE_BUTTON_LEFT:
+				if event.pressed:
+					sprite_2d.texture = load("res://assets/mouse/suck_on.png")
+				else:
+					sprite_2d.texture = load("res://assets/mouse/suck_off.png")
+		
+		MOUSE_MODE.PET:
+			if event is InputEventMouseButton and event.button_index == MouseButton.MOUSE_BUTTON_LEFT:
+				if event.pressed:
+					sprite_2d.texture = load("res://assets/mouse/pet_down.png")
+					if curr_target != null and curr_target.data.alien != null:
+						curr_target.data.alien.do_pet()
+				else:
+					sprite_2d.texture = load("res://assets/mouse/pet_up.png")
+			
 
 func _area_entered(area: Area2D) -> void:
 	if area is RoomScene:

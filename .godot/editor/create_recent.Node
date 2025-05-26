@@ -1,10 +1,10 @@
 AnimationPlayer
+Control
+TextureRect
 TextureButton
 Button
-TextureRect
 GridContainer
 VBoxContainer
-Control
 CenterContainer
 Label
 HBoxContainer

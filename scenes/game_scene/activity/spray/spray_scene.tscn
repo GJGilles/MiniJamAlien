@@ -66,6 +66,7 @@ position = Vector2(87, 64)
 texture = ExtResource("4_k061k")
 
 [node name="Clump3" type="Sprite2D" parent="Alien"]
+visible = false
 position = Vector2(-81, 62)
 texture = ExtResource("6_x437l")
 

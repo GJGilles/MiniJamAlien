@@ -32,7 +32,6 @@ var data: AlienData:
 			visible = true
 			data.on_update.connect(on_update)
 			data.on_happy.connect(on_happy)
-			sprite_2d.texture = data.get_sprite()
 			on_update()
 
 var is_ready: bool = false
@@ -46,12 +45,15 @@ func _physics_process(delta: float) -> void:
 	
 	data.time_food_want += delta
 	data.time_activity_want += delta
+	data.time_blush += delta
 	
 	particle_time += delta
 	if particle_time > PARTICLE_TIMEOUT:
 		particles.emitting = false
 
 func on_update():
+	sprite_2d.texture = data.get_sprite()
+	
 	if data.happiness <= 20:
 		happiness.texture = load("res://assets/happiness/0.png")
 	elif data.happiness <= 40:
@@ -66,9 +68,11 @@ func on_update():
 	if data.curr_food_want != GAME.FOOD_TYPE.NONE:
 		thought.visible = true
 		want.texture = GAME.get_food_texture(data.curr_food_want)
+		want.scale = Vector2(2, 2)
 	elif data.curr_activity_want != GAME.ACTIVITY_TYPE.NONE:
 		thought.visible = true
 		want.texture = GAME.get_item_texture(data.curr_activity_want)
+		want.scale = Vector2(0.75, 0.75)
 	else:
 		thought.visible = false
 

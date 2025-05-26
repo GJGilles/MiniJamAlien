@@ -3,7 +3,14 @@ extends ShopItemData
 class_name ShopFacilityData
 
 @export var type: GAME.ACTIVITY_TYPE
-@export var room: RoomData
+@export var room: RoomData:
+	get:
+		return room
+	set(value):
+		room = value
+		if room != null:
+			room.on_update.connect(func(): on_update.emit())
+			
 @export var prev: RoomData:
 	get:
 		return prev
