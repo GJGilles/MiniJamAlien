@@ -47,7 +47,7 @@ var curr_source: RoomScene
 func _ready() -> void:
 	mode = MOUSE_MODE.CARRY
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if mode == MOUSE_MODE.SUCK and Input.is_mouse_button_pressed(MouseButton.MOUSE_BUTTON_LEFT) and curr_target != null:
 		curr_target.suck_to(global_position, SUCK_FORCE)
 

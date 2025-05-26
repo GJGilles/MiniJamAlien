@@ -13,7 +13,6 @@ config_version=5
 config/name="MiniJamAlien"
 run/main_scene="uid://dov0rwj03vh4o"
 config/features=PackedStringArray("4.4", "GL Compatibility")
-config/icon="res://icon.svg"
 
 [autoload]
 
@@ -31,14 +30,6 @@ window/size/resizable=false
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/donut_collision_polygon2D/plugin.cfg")
-
-[gui]
-
-theme/custom="res://resources/themes/tower.tres"
-
-[internationalization]
-
-locale/translations=PackedStringArray("res://addons/maaacks_game_template/base/translations/menus_translations.en.translation", "res://addons/maaacks_game_template/base/translations/menus_translations.fr.translation")
 
 [maaacks_game_template]
 

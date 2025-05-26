@@ -69,11 +69,11 @@ func pickup() -> CarryData:
 	else:
 		return null
 
-func add_spore(data: SporeData):
+func add_spore(spore_data: SporeData):
 	var spore: SporeScene = SPORE_SCENE.instantiate()
 	spores.add_child(spore)
 	spore.scale = spores.scale
-	spore.data = data
+	spore.data = spore_data
 
 func suck_to(pos: Vector2, force: float):
 	for child: SporeScene in spores.get_children():
