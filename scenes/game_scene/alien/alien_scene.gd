@@ -9,6 +9,7 @@ class_name AlienScene
 
 @onready var happiness: Sprite2D = $Happiness
 @onready var particles: CPUParticles2D = $Particles
+@onready var audio = $AudioStreamPlayer
 
 const PARTICLE_TIMEOUT: float = 1.0
 
@@ -43,10 +44,6 @@ func _physics_process(delta: float) -> void:
 	if data == null:
 		return
 	
-	data.time_food_want += delta
-	data.time_activity_want += delta
-	data.time_blush += delta
-	
 	particle_time += delta
 	if particle_time > PARTICLE_TIMEOUT:
 		particles.emitting = false
@@ -65,17 +62,24 @@ func on_update():
 	else:
 		happiness.texture = load("res://assets/happiness/4.png")
 	
-	if data.curr_food_want != GAME.FOOD_TYPE.NONE:
+	if data.want_food.is_want():
 		thought.visible = true
-		want.texture = GAME.get_food_texture(data.curr_food_want)
+		want.texture = GAME.get_food_texture(data.want_food.curr_want)
 		want.scale = Vector2(2, 2)
-	elif data.curr_activity_want != GAME.ACTIVITY_TYPE.NONE:
+	elif data.want_activity.is_want():
 		thought.visible = true
-		want.texture = GAME.get_item_texture(data.curr_activity_want)
+		want.texture = GAME.get_item_texture(data.want_activity.curr_want)
 		want.scale = Vector2(0.75, 0.75)
+	elif data.want_spore.is_want():
+		thought.visible = true
+		want.texture = GAME.get_spore_texture(data.want_spore.curr_want)
+		want.scale = Vector2(8, 8)
 	else:
 		thought.visible = false
 
 func on_happy():
 	particles.emitting = true
 	particle_time = 0
+	
+	if not audio.playing:
+		audio.play()

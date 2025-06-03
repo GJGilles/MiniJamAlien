@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bcunmbtjin7dc"]
+[gd_scene load_steps=11 format=3 uid="uid://bcunmbtjin7dc"]
 
 [ext_resource type="Script" uid="uid://cijgjvk73wx0q" path="res://scenes/game_scene/activity/spray/spray_scene.gd" id="1_r6wo5"]
 [ext_resource type="Texture2D" uid="uid://b1rwvx87egy0s" path="res://assets/room/spray_active.png" id="2_hbeo6"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cfb1pairk8m36" path="res://assets/spray/clump_3.png" id="6_x437l"]
 [ext_resource type="Texture2D" uid="uid://cgdgd7th87bee" path="res://assets/spray/butt_up.png" id="8_x437l"]
 [ext_resource type="Texture2D" uid="uid://bbunrdwtsekaw" path="res://assets/spray/butt_down.png" id="9_00s5u"]
+[ext_resource type="AudioStream" uid="uid://jq88lx2v4q7h" path="res://sound/795495__soundsofthemachine__high-power-ray-gun-blast.wav" id="10_00s5u"]
 
 [node name="SprayScene" type="Node2D"]
 script = ExtResource("1_r6wo5")
@@ -112,6 +113,12 @@ texture_normal = ExtResource("8_x437l")
 texture_pressed = ExtResource("9_00s5u")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_00s5u")
+volume_db = -30.0
+pitch_scale = 5.0
+bus = &"SFX"
 
 [connection signal="button_down" from="Control/Button0" to="." method="_button_down" binds= [0]]
 [connection signal="button_up" from="Control/Button0" to="." method="_button_up" binds= [0]]

@@ -34,11 +34,17 @@ var money: int:
 		money = value
 		on_update.emit()
 
+var is_room_paused: bool = false;
+
+signal on_tick(delta: float)
 signal on_update()
 signal on_sell()
 
 func _ready() -> void:
 	money = 5
+
+func _physics_process(delta):
+	on_tick.emit(delta)
 
 func get_alien_texture(alien: ALIEN_TYPE) -> Texture2D:
 	match alien:

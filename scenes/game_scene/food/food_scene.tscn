@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://wf7kp2sossa1"]
+[gd_scene load_steps=5 format=3 uid="uid://wf7kp2sossa1"]
 
 [ext_resource type="Script" uid="uid://dq54cmufbobl8" path="res://scenes/game_scene/food/food_scene.gd" id="1_qp6m4"]
 [ext_resource type="Texture2D" uid="uid://3yg0c8rqcvho" path="res://assets/food/green.png" id="1_w0dna"]
 [ext_resource type="Texture2D" uid="uid://b05db7w5hrxw4" path="res://assets/ui/food_bg.png" id="2_tnc46"]
+[ext_resource type="AudioStream" uid="uid://dqj5eu5dlw813" path="res://sound/UI Click.wav" id="4_wvj77"]
 
 [node name="FoodScene" type="Control"]
 custom_minimum_size = Vector2(100, 100)
@@ -35,5 +36,9 @@ grow_vertical = 2
 texture = ExtResource("1_w0dna")
 expand_mode = 5
 stretch_mode = 5
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_wvj77")
+volume_db = -10.0
 
 [connection signal="button_down" from="TextureButton" to="." method="_button_down"]

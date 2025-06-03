@@ -28,7 +28,7 @@ func _ready() -> void:
 	alien_movement()
 
 func is_item_active() -> bool:
-	return data.alien != null and data.facility != null and data.alien.curr_activity_want == data.facility.type
+	return data.alien != null and data.facility != null and data.alien.want_activity.curr_want == data.facility.type
 
 func on_update():
 	if !is_ready:

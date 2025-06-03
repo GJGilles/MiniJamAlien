@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://7a7kpmnv4514"]
+[gd_scene load_steps=5 format=3 uid="uid://7a7kpmnv4514"]
 
 [ext_resource type="Script" uid="uid://cohfrjdhl2udq" path="res://scenes/game_scene/shop/item/shop_item_scene.gd" id="1_b78is"]
 [ext_resource type="Texture2D" uid="uid://btjnfpv37io84" path="res://assets/room/spray.png" id="2_l8tl1"]
 [ext_resource type="Texture2D" uid="uid://brutfpoh3yji4" path="res://assets/ui/dimes.png" id="3_1ndrb"]
+[ext_resource type="AudioStream" uid="uid://by7mavdl4jmbg" path="res://sound/kaching.wav" id="4_1ndrb"]
 
 [node name="ShopItemScene" type="Button"]
 custom_minimum_size = Vector2(100, 100)
@@ -63,5 +64,8 @@ grow_horizontal = 0
 texture = ExtResource("3_1ndrb")
 expand_mode = 5
 stretch_mode = 5
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_1ndrb")
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]

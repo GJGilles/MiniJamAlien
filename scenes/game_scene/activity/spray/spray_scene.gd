@@ -10,6 +10,8 @@ extends ActivityScene
 @onready var clump_2: Sprite2D = $Alien/Clump2
 @onready var clump_3: Sprite2D = $Alien/Clump3
 
+@onready var audio = $AudioStreamPlayer
+
 const LASER_TIME: float = 1
 
 var clumps: Dictionary[int, float] = {}
@@ -30,6 +32,12 @@ func on_open():
 		get_sprite_node(idx).modulate = Color(1, 1, 1, 1)
 
 func _physics_process(delta: float) -> void:
+	if active_laser >= 0:
+		if not audio.playing or audio.get_playback_position() > 0.1:
+			audio.play()
+	else:
+		audio.stop()
+	
 	if clumps.has(active_laser):
 		clumps[active_laser] -= delta
 		get_sprite_node(active_laser).modulate = Color(1, 1, 1, 0.5 + clumps[active_laser] / (2 * LASER_TIME))

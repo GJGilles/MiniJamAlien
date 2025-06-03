@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bu0xnmt6a3weo"]
+[gd_scene load_steps=6 format=3 uid="uid://bu0xnmt6a3weo"]
 
 [ext_resource type="Script" uid="uid://cj5my0mi4k3l1" path="res://globals/mouse/mouse_global.gd" id="1_1umih"]
 [ext_resource type="PackedScene" uid="uid://c2hsf3qakqox7" path="res://scenes/game_scene/alien/alien_scene.tscn" id="2_eh284"]
 [ext_resource type="Texture2D" uid="uid://dd82qlrojk1nd" path="res://assets/mouse/suck_off.png" id="2_iadvy"]
+[ext_resource type="AudioStream" uid="uid://k4pyx3e8mpmk" path="res://sound/coin suck.wav" id="4_maa2u"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1umih"]
 radius = 1.0
@@ -22,6 +23,9 @@ collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_1umih")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_maa2u")
 
 [connection signal="area_entered" from="Area2D" to="." method="_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_area_exited"]

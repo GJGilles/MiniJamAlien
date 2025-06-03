@@ -10,6 +10,8 @@ const SPIN_TIMEOUT: float = 0.5
 
 @onready var button_back: Sprite2D = $ButtonBack
 
+@onready var audio = $AudioStreamPlayer
+
 var speed: float = 0
 var dest: Vector2 = Vector2(0, 0)
 
@@ -32,6 +34,7 @@ func _physics_process(delta: float) -> void:
 
 func _on_button_pressed() -> void:
 	last_press_time = 0
+	audio.play()
 	
 	speed = min(speed + SPEED_BOOST, MAX_SPEED)
 	dest = Vector2(randi_range(-100, 100), randi_range(-100, 100))

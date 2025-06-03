@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dov0rwj03vh4o"]
+[gd_scene load_steps=21 format=3 uid="uid://dov0rwj03vh4o"]
 
 [ext_resource type="Texture2D" uid="uid://bdeb4kcru51ci" path="res://assets/ui/BG.png" id="1_jytbd"]
 [ext_resource type="PackedScene" uid="uid://bnuoq47r4b8ue" path="res://scenes/game_scene/room/room_scene.tscn" id="1_pwder"]
@@ -13,9 +13,39 @@
 [ext_resource type="Texture2D" uid="uid://blch31tj8k2kj" path="res://assets/mouse/suck_on.png" id="5_1ypwy"]
 [ext_resource type="Resource" uid="uid://bu2ucoslq8l8u" path="res://resources/rooms/room_4.tres" id="5_iprv4"]
 [ext_resource type="Resource" uid="uid://bxjljpb6nj7f3" path="res://resources/rooms/room_5.tres" id="6_1ypwy"]
-[ext_resource type="Texture2D" uid="uid://xdg3dojinin7" path="res://assets/mouse/pet.png" id="6_hunbn"]
 [ext_resource type="Texture2D" uid="uid://c4eoawkpwvo1v" path="res://assets/mouse/cursor.png" id="7_7aaem"]
 [ext_resource type="Resource" uid="uid://bp61s61gunlpj" path="res://resources/rooms/room_6.tres" id="7_hunbn"]
+[ext_resource type="Texture2D" uid="uid://1wwr4tigj21m" path="res://assets/mouse/pet_up.png" id="8_ojnix"]
+[ext_resource type="AudioStream" uid="uid://ci4an1kwq0vcs" path="res://sound/dusty.wav" id="17_ojnix"]
+
+[sub_resource type="Animation" id="Animation_v03ia"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_3mv4o"]
+resource_name = "music"
+length = 45.0
+loop_mode = 1
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("17_ojnix")
+}],
+"times": PackedFloat32Array(0.4)
+}
+tracks/0/use_blend = true
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_i6h5s"]
+_data = {
+&"RESET": SubResource("Animation_v03ia"),
+&"music": SubResource("Animation_3mv4o")
+}
 
 [node name="GameScene" type="Node2D"]
 
@@ -90,7 +120,7 @@ grow_vertical = 0
 
 [node name="SuckTool" parent="UI/Tools" instance=ExtResource("3_o81xq")]
 layout_mode = 2
-mode = 1
+mode = 2
 sprite = ExtResource("5_1ypwy")
 
 [node name="CarryTool" parent="UI/Tools" instance=ExtResource("3_o81xq")]
@@ -99,8 +129,8 @@ sprite = ExtResource("7_7aaem")
 
 [node name="PetTool" parent="UI/Tools" instance=ExtResource("3_o81xq")]
 layout_mode = 2
-mode = 2
-sprite = ExtResource("6_hunbn")
+mode = 1
+sprite = ExtResource("8_ojnix")
 
 [node name="ShopScene" parent="." instance=ExtResource("4_xb203")]
 
@@ -130,3 +160,13 @@ data = ExtResource("6_1ypwy")
 [node name="RoomScene6" parent="Rooms" instance=ExtResource("1_pwder")]
 position = Vector2(280, 480)
 data = ExtResource("7_hunbn")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -20.0
+bus = &"Music"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_i6h5s")
+}
+autoplay = "music"

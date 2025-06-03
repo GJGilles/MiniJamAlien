@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c2hsf3qakqox7"]
+[gd_scene load_steps=11 format=3 uid="uid://c2hsf3qakqox7"]
 
 [ext_resource type="Script" uid="uid://blcj8n2mna7xf" path="res://scenes/game_scene/alien/alien_scene.gd" id="1_r5wbw"]
 [ext_resource type="Texture2D" uid="uid://li7pfiik3t5e" path="res://assets/alien/blue.png" id="2_qwp8p"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://k5xic6v74l0v" path="res://assets/item/spin.png" id="4_gnk5l"]
 [ext_resource type="Texture2D" uid="uid://dg4tx6p0yaitx" path="res://assets/happiness/2.png" id="5_gnk5l"]
 [ext_resource type="Texture2D" uid="uid://7n12iedtgyuf" path="res://assets/happiness/heart.png" id="6_gnk5l"]
+[ext_resource type="AudioStream" uid="uid://chr6n1ht1iar1" path="res://sound/happy sounds.wav" id="7_cowd7"]
 
 [sub_resource type="Animation" id="Animation_v4ckg"]
 length = 0.001
@@ -94,6 +95,7 @@ _data = {
 }
 
 [node name="AlienScene" type="Node2D"]
+z_index = 1
 scale = Vector2(0.7, 0.7)
 script = ExtResource("1_r5wbw")
 
@@ -137,3 +139,7 @@ spread = 90.0
 gravity = Vector2(0, 0)
 initial_velocity_min = 250.0
 initial_velocity_max = 300.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_cowd7")
+bus = &"SFX"

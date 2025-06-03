@@ -2,6 +2,7 @@ extends Control
 
 @onready var icon: TextureRect = $Icon
 @onready var cost: Label = $Cost/Label
+@onready var audio = $AudioStreamPlayer
 
 @export var data: ShopItemData:
 	get:
@@ -27,4 +28,5 @@ func on_update():
 
 
 func _on_pressed() -> void:
-	data.purchase()
+	if data.purchase():
+		audio.play()

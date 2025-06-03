@@ -1,6 +1,7 @@
 extends Control
 
 @onready var texture_rect: TextureRect = $TextureButton/TextureRect
+@onready var audio = $AudioStreamPlayer
 
 @export var food: GAME.FOOD_TYPE
 
@@ -10,3 +11,4 @@ func _ready() -> void:
 func _button_down() -> void:
 	MOUSE.mode = MOUSE.MOUSE_MODE.CARRY
 	MOUSE.curr_carry = CarryFoodData.create(food)
+	audio.play()

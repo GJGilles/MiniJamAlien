@@ -2,8 +2,6 @@ extends Resource
 
 class_name AlienData
 
-const FOOD_WANT_TIMEOUT: float = 5
-const ACTIVITY_WANT_TIMEOUT: float = 10
 const BLUSH_TIMEOUT: float = 0.5
 
 var is_unlocked: bool = false:
@@ -13,7 +11,7 @@ var is_unlocked: bool = false:
 		is_unlocked = value
 		on_update.emit()
 
-var happiness: float:
+var happiness: float = 0:
 	get:
 		return happiness
 	set(value):
@@ -22,57 +20,12 @@ var happiness: float:
 			on_happy.emit()
 		
 		happiness = clamp(value, 0, 100)
+		want_food.happiness = happiness
+		want_activity.happiness = happiness
+		want_spore.happiness = happiness
 		on_update.emit()
 
-var curr_food_want: GAME.FOOD_TYPE:
-	get:
-		return curr_food_want
-	set(value):
-		curr_food_want = value
-		on_update.emit()
-		
-var curr_activity_want: GAME.ACTIVITY_TYPE:
-	get:
-		return curr_activity_want
-	set(value):
-		curr_activity_want = value
-		on_update.emit()
-
-var time_food_want: float:
-	get:
-		return time_food_want
-	set(value):
-		if curr_food_want != GAME.FOOD_TYPE.NONE:
-			if value > FOOD_WANT_TIMEOUT:
-				happiness -= get_food_wants()[curr_food_want] / 2.0
-				time_food_want = 0
-			else:
-				time_food_want = value
-		elif value > get_food_cooldown() and get_food_wants().size() > 0:
-			var idx: int = randi() % get_food_wants().keys().size()
-			curr_food_want = get_food_wants().keys()[idx]
-			time_food_want = 0
-		else:
-			time_food_want = value
-
-var time_activity_want: float:
-	get:
-		return time_activity_want
-	set(value):
-		if curr_activity_want != GAME.ACTIVITY_TYPE.NONE:
-			if value > ACTIVITY_WANT_TIMEOUT:
-				happiness -= get_activity_wants()[curr_activity_want] / 2.0
-				time_activity_want = 0
-			else:
-				time_activity_want = value
-		elif value > get_activity_cooldown() and get_activity_wants().size() > 0:
-			var idx: int = randi() % get_activity_wants().keys().size()
-			curr_activity_want = get_activity_wants().keys()[idx]
-			time_activity_want = 0
-		else:
-			time_activity_want = value
-
-var time_blush: float = 1:
+var time_blush: float = BLUSH_TIMEOUT:
 	get:
 		return time_blush
 	set(value):
@@ -81,48 +34,44 @@ var time_blush: float = 1:
 			if time_blush > BLUSH_TIMEOUT:
 				on_update.emit()
 
+var want_food: WantData = WantData.new()
+var want_activity: WantData = WantData.new()
+var want_spore: WantData = WantData.new()
+
 signal on_update()
 signal on_happy()
 
 func _init():
-	happiness = 20
-	time_blush = BLUSH_TIMEOUT
+	GAME.on_tick.connect(on_tick)
 	
-	time_food_want = 10
-	time_activity_want = 0
+	want_food.on_update.connect(on_update.emit)
+	want_activity.on_update.connect(on_update.emit)
+	want_spore.on_update.connect(on_update.emit)
 	
-	curr_food_want = GAME.FOOD_TYPE.NONE
-	curr_activity_want = GAME.ACTIVITY_TYPE.NONE
+	want_food.on_happy.connect(func(p: float): happiness += p)
+	want_activity.on_happy.connect(func(p: float): happiness += p)
+	want_spore.on_happy.connect(func(p: float): happiness += p)
+
+func on_tick(delta: float):
+	if is_unlocked:
+		time_blush += delta
+		
+		want_food.on_tick(delta)
+		want_activity.on_tick(delta)
+		want_spore.on_tick(delta)
+		
 
 func get_sprite() -> Texture2D:
 	return null
 
 func get_spore() -> SporeData:
 	return null
-
-func get_food_wants() -> Dictionary[GAME.FOOD_TYPE, int]:
-	return {}
-
-func get_activity_wants() -> Dictionary[GAME.ACTIVITY_TYPE, int]:
-	return {}
-
-func get_food_cooldown() -> float:
-	return 3.0
-
-func get_activity_cooldown() -> float:
-	return 8.0
 	
 func do_food_want(food: GAME.FOOD_TYPE):
-	if curr_food_want == food:
-		happiness += get_food_wants()[curr_food_want]
-		curr_food_want = GAME.FOOD_TYPE.NONE
-		time_food_want = 0
+	want_food.do_want(food)
 
 func do_activity_want(activity: GAME.ACTIVITY_TYPE):
-	if curr_activity_want == activity:
-		happiness += get_activity_wants()[curr_activity_want]
-		curr_activity_want = GAME.ACTIVITY_TYPE.NONE
-		time_activity_want = 0
+	want_activity.do_want(activity)
 
 func do_pet():
 	happiness += 0.05

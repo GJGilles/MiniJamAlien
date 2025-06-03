@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cbrxpudjvhjs"]
+[gd_scene load_steps=5 format=3 uid="uid://cbrxpudjvhjs"]
 
 [ext_resource type="Script" uid="uid://d3wnngwbby6g" path="res://scenes/game_scene/tool/tool_scene.gd" id="1_lwudn"]
 [ext_resource type="Texture2D" uid="uid://dp3vvwv41s3j7" path="res://assets/ui/tool_bg.png" id="2_jerei"]
 [ext_resource type="Texture2D" uid="uid://xdg3dojinin7" path="res://assets/mouse/pet.png" id="3_jwpg0"]
+[ext_resource type="AudioStream" uid="uid://dqj5eu5dlw813" path="res://sound/UI Click.wav" id="4_jwpg0"]
 
 [node name="ToolScene" type="Control"]
 custom_minimum_size = Vector2(100, 100)
@@ -32,5 +33,9 @@ grow_vertical = 2
 texture = ExtResource("3_jwpg0")
 expand_mode = 3
 stretch_mode = 5
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_jwpg0")
+volume_db = -10.0
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
