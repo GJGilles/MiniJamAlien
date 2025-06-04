@@ -53,6 +53,9 @@ func _physics_process(_delta: float) -> void:
 		curr_target.suck_to(global_position, SUCK_FORCE)
 
 func _input(event: InputEvent) -> void:
+	if MINIGAME.is_active:
+		return
+	
 	if event is InputEventMouseMotion:
 		position = (event.position - get_canvas_transform().origin) / get_canvas_transform().get_scale()
 	elif event.is_action("tool_use"):

@@ -28,5 +28,8 @@ func on_update():
 
 
 func _on_pressed() -> void:
+	if MINIGAME.is_active:
+		return
+		
 	if data.purchase():
 		audio.play()

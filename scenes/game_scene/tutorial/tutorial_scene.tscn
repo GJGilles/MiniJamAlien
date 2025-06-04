@@ -1,0 +1,65 @@
+[gd_scene load_steps=4 format=3 uid="uid://d1tjykoi4lvmw"]
+
+[ext_resource type="Script" uid="uid://dejhrguml8dfo" path="res://scenes/game_scene/tutorial/tutorial_scene.gd" id="1_2iy6b"]
+[ext_resource type="Texture2D" uid="uid://c378qay333kg8" path="res://assets/ui/Dialogue Pfp Commander B.png" id="2_ospcg"]
+[ext_resource type="Texture2D" uid="uid://dcsemkkm2m3q2" path="res://assets/ui/Dialogue Box.png" id="3_nxksy"]
+
+[node name="TutorialScene" type="Control"]
+layout_mode = 3
+anchor_left = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.25
+offset_bottom = 0.25
+grow_horizontal = 0
+mouse_filter = 2
+script = ExtResource("1_2iy6b")
+
+[node name="Bee" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.75
+anchor_top = 0.1
+anchor_right = 0.97
+anchor_bottom = 0.95
+offset_left = -0.200043
+offset_top = -0.0550003
+offset_right = 0.199951
+offset_bottom = -0.0570068
+grow_horizontal = 0
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_ospcg")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Dialog" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.25
+anchor_top = 0.1
+anchor_right = 0.7
+anchor_bottom = 0.92
+offset_top = -0.0550003
+offset_right = 2.79999
+offset_bottom = 0.0130005
+mouse_filter = 2
+texture = ExtResource("3_nxksy")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="Dialog"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 11.0
+offset_top = 10.0
+offset_right = -5.79999
+offset_bottom = -8.64799
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/line_spacing = -5
+theme_override_constants/paragraph_spacing = 10
+theme_override_font_sizes/font_size = 18
+text = "Greetings Cadet! Choose an Alien to adopt into your care! 
+First, let's adopt one from the Penta Store!"
+autowrap_mode = 3

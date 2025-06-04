@@ -10,5 +10,8 @@ func _ready() -> void:
 	texture_rect.texture = sprite
 
 func _on_button_pressed() -> void:
+	if MINIGAME.is_active:
+		return
+		
 	MOUSE.mode = mode
 	audio.play()
